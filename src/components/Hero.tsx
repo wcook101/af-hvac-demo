@@ -10,13 +10,12 @@ export function Hero() {
         fill
         priority
         sizes="100vw"
-        className="object-cover object-[center_35%]"
+        className="object-cover object-[66%_center] sm:object-[64%_48%] lg:object-[60%_58%]"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/82 to-navy/55" />
-      <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/75 to-navy/25" />
+      <div className="hero-shade absolute inset-0" />
 
-      <div className="relative z-10 mx-auto w-full max-w-6xl px-4 py-16 md:px-6 md:py-24">
-        <div className="animate-rise max-w-2xl">
+      <div className="relative z-10 mx-auto w-full min-w-0 max-w-6xl px-4 py-16 md:px-6 md:py-24">
+        <div className="animate-rise w-full min-w-0 max-w-2xl">
           <p className="text-sm font-semibold uppercase tracking-[0.22em] text-copper">
             Walnutport, Pennsylvania
           </p>

@@ -13,7 +13,7 @@ The fox logo is a temporary crop from the business-card photo. A clean digital l
 
 Equipment photographs are stock images from Pexels, used for this demo:
 
-- Technician and outdoor unit: Pexels 32497161
+- Hero, technician at a residential outdoor condenser: Pexels 32497161 (Kathleen Austin Kuhn, Pexels License). Cropped and brightened for the homepage.
 - Rooftop air conditioner: Pexels 5463587
 - Heating equipment: Pexels 34938439
 - Indoor unit service: Pexels 32588555

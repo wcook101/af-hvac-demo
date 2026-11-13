@@ -133,6 +133,31 @@ button:focus-visible {
   animation: rise 0.8s ease both;
 }
 
+/* Darker behind the left-side headline, light over the technician and condenser. */
+.hero-shade {
+  background: linear-gradient(
+    90deg,
+    rgb(30 27 61 / 0.74) 0%,
+    rgb(30 27 61 / 0.7) 28%,
+    rgb(30 27 61 / 0.34) 52%,
+    rgb(30 27 61 / 0.16) 72%,
+    rgb(30 27 61 / 0.12) 100%
+  );
+}
+
+@media (min-width: 768px) {
+  .hero-shade {
+    background: linear-gradient(
+      102deg,
+      rgb(30 27 61 / 0.72) 0%,
+      rgb(30 27 61 / 0.68) 24%,
+      rgb(30 27 61 / 0.3) 40%,
+      rgb(30 27 61 / 0.16) 56%,
+      rgb(30 27 61 / 0.11) 100%
+    );
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
