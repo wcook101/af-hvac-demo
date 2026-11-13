@@ -1,36 +1,22 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# A&F HVAC demo
 
-## Getting Started
-
-First, run the development server:
+Presentation website for A&F HVAC in Walnutport, Pennsylvania. Built with Next.js, TypeScript, and Tailwind CSS.
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The estimate form is demo-only. It does not send or store anything entered into it.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The fox logo is a temporary crop from the business-card photo. A clean digital logo file would be sharper.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Equipment photographs are stock images from Pexels, used for this demo:
 
-## Learn More
+- Technician and outdoor unit: Pexels 32497161
+- Rooftop air conditioner: Pexels 5463587
+- Heating equipment: Pexels 34938439
+- Indoor unit service: Pexels 32588555
+- Gauge maintenance: Pexels 6471914
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Confirm with the owner before a public launch: service list, PA license 037268, hours, service area, and whether search engines should index the site.
