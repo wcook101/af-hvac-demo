@@ -57,23 +57,23 @@ export const services = [
 
 export const reasons = [
   {
-    title: "Local Walnutport business",
-    text: "Based at 347 East Zimmer Drive in Walnutport, Pennsylvania.",
+    title: "Locally Based",
+    text: "A&F HVAC is based at 347 East Zimmer Dr. in Walnutport, Pennsylvania.",
     icon: "pin",
   },
   {
-    title: "Heating and air conditioning",
-    text: "The company focuses on heating and cooling, as stated on its business card.",
+    title: "Heating & Cooling",
+    text: "The company focuses on heating and air conditioning for local customers.",
     icon: "comfort",
   },
   {
-    title: "Fully insured",
-    text: "Fully insured, as noted on the A&F HVAC business card.",
+    title: "Fully Insured",
+    text: "A&F HVAC is fully insured.",
     icon: "shield",
   },
   {
-    title: "Direct phone contact",
-    text: "Call 610-704-4419 to reach A&F HVAC.",
+    title: "Call Us Directly",
+    text: "Reach the company by phone at 610-704-4419.",
     icon: "phone",
   },
 ] as const;
