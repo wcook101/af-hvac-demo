@@ -1,12 +1,24 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useState, type MouseEvent } from "react";
 import { CloseIcon, MenuIcon, PhoneIcon } from "@/components/Icons";
 import { nav, site } from "@/lib/site";
 
 export function Header() {
   const [open, setOpen] = useState(false);
+
+  function returnHome(event: MouseEvent<HTMLAnchorElement>) {
+    setOpen(false);
+    if (window.location.pathname !== "/") return;
+
+    event.preventDefault();
+    if (window.location.hash) {
+      window.history.replaceState(null, "", "/");
+    }
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
+  }
 
   useEffect(() => {
     if (!open) return;
@@ -24,7 +36,12 @@ export function Header() {
         Skip to content
       </a>
       <div className="mx-auto grid max-w-6xl grid-cols-[minmax(0,1fr)_auto] items-center gap-2 px-3 py-2.5 sm:px-4 lg:grid-cols-[auto_minmax(0,1fr)_auto] lg:gap-6 lg:px-6 lg:py-3">
-        <a href="#top" className="min-w-0 justify-self-start rounded-md" onClick={() => setOpen(false)}>
+        <a
+          href="/"
+          aria-label="A&F HVAC — Back to Home"
+          className="min-w-0 cursor-pointer justify-self-start rounded-md"
+          onClick={returnHome}
+        >
           <Image
             src="/brand/af-hvac-logo.png"
             alt="A&F HVAC, Heating and Air Conditioning"
