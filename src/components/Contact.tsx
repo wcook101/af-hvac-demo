@@ -4,7 +4,7 @@ import { site } from "@/lib/site";
 
 export function Contact() {
   return (
-    <section id="contact" className="scroll-mt-28 bg-navy-deep px-4 py-20 md:px-6 md:py-28">
+    <section id="contact" className="scroll-mt-40 bg-navy-deep px-4 py-20 md:px-6 md:py-28">
       <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-2 lg:items-start">
         <div>
           <p className="text-sm font-semibold uppercase tracking-[0.22em] text-copper">Get in touch</p>

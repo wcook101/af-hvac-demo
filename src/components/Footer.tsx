@@ -6,12 +6,14 @@ export function Footer() {
     <footer className="border-t border-white/10 bg-[#141228]">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 md:grid-cols-3 md:px-6">
         <div>
-          <a href="#top" className="inline-flex items-center gap-3">
-            <Image src="/brand/fox.png" alt="" width={433} height={372} className="h-12 w-auto" />
-            <span>
-              <span className="block font-display text-xl font-semibold text-cream">A&amp;F HVAC</span>
-              <span className="mt-1 block h-0.5 w-8 bg-copper" aria-hidden="true" />
-            </span>
+          <a href="#top" className="inline-block max-w-full">
+            <Image
+              src="/brand/af-hvac-logo.png"
+              alt="A&F HVAC, Heating and Air Conditioning"
+              width={2172}
+              height={724}
+              className="h-auto w-full max-w-[17rem] object-contain"
+            />
           </a>
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted">
             Heating and air conditioning in Walnutport, Pennsylvania.

@@ -4,7 +4,7 @@ import { addressLine, site } from "@/lib/site";
 
 export function About() {
   return (
-    <section id="about" className="scroll-mt-28 bg-navy-deep px-4 py-20 md:px-6 md:py-28">
+    <section id="about" className="scroll-mt-40 bg-navy-deep px-4 py-20 md:px-6 md:py-28">
       <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-2 lg:gap-16">
         <div>
           <p className="text-sm font-semibold uppercase tracking-[0.22em] text-copper">The company</p>
@@ -26,19 +26,12 @@ export function About() {
         <aside className="rounded-3xl border border-white/10 bg-panel px-6 py-8 shadow-2xl shadow-black/20 sm:px-8">
           <div className="border-t-4 border-copper pt-8 text-center">
             <Image
-              src="/brand/fox.png"
-              alt="A&F HVAC fox logo, cropped from the business card."
-              width={433}
-              height={372}
-              className="mx-auto h-28 w-auto"
+              src="/brand/af-hvac-logo.png"
+              alt="A&F HVAC, Heating and Air Conditioning"
+              width={2172}
+              height={724}
+              className="mx-auto h-auto w-full max-w-md object-contain"
             />
-            <p className="mt-4 font-display text-3xl font-semibold tracking-tight text-cream">
-              A&amp;F HVAC
-            </p>
-            <span className="mx-auto mt-3 block h-0.5 w-16 bg-copper" aria-hidden="true" />
-            <p className="mt-3 text-xs font-semibold uppercase tracking-[0.18em] text-muted">
-              Heating &amp; Air Conditioning
-            </p>
           </div>
           <ul className="mt-8 space-y-4 text-left text-cream">
             <li>
