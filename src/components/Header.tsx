@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState, type MouseEvent } from "react";
-import { ChevronIcon, CloseIcon, MenuIcon, PhoneIcon } from "@/components/Icons";
+import { ChevronIcon, CloseIcon, MailIcon, MenuIcon, PhoneIcon } from "@/components/Icons";
 import { pageLinks, services, site } from "@/lib/site";
 
 export function Header() {
@@ -159,6 +159,14 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-2">
+          <Link
+            href="/email"
+            aria-current={pathname === "/email" ? "page" : undefined}
+            className="btn-ghost hidden h-11 shrink-0 px-3 text-sm lg:inline-flex"
+          >
+            <MailIcon className="size-4" />
+            Webmail
+          </Link>
           <a href={site.phoneHref} className="btn-copper h-11 shrink-0 px-3 sm:px-4">
             <PhoneIcon className="size-4" />
             <span className="sm:hidden">Call</span>
@@ -237,6 +245,17 @@ export function Header() {
                   </Link>
                 </li>
               ))}
+            <li className="pt-2">
+              <Link
+                href="/email"
+                aria-current={pathname === "/email" ? "page" : undefined}
+                className="btn-ghost h-11 w-full px-4 text-sm"
+                onClick={() => setOpen(false)}
+              >
+                <MailIcon className="size-4" />
+                Webmail
+              </Link>
+            </li>
           </ul>
         </nav>
       ) : null}
