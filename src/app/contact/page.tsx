@@ -19,8 +19,7 @@ export default function ContactPage() {
             Contact A&amp;F HVAC
           </h1>
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted">
-            Call, email, or use the estimate form. The form stays in your browser and does not send a
-            message. For a direct answer, the phone is the surest way to reach the company.
+            Call, email, or request an estimate. A&amp;F HVAC is at {site.street} in {site.locality}.
           </p>
         </div>
       </header>
@@ -56,12 +55,32 @@ export default function ContactPage() {
                   {site.phoneDisplay}
                 </a>
               </p>
-              <p className="mt-5">
-                <a href={site.emailHref} className="inline-flex items-center gap-3 text-lg text-cream hover:text-copper">
-                  <MailIcon className="size-5 text-copper" />
-                  {site.email}
-                </a>
-              </p>
+              <ul className="mt-5 space-y-5">
+                <li>
+                  <p className="text-sm font-semibold uppercase tracking-[0.16em] text-muted">
+                    Service &amp; General Inquiries
+                  </p>
+                  <a
+                    href={site.emailHref}
+                    className="mt-2 inline-flex items-center gap-3 break-all text-lg text-cream hover:text-copper"
+                  >
+                    <MailIcon className="size-5 shrink-0 text-copper" />
+                    {site.email}
+                  </a>
+                </li>
+                <li>
+                  <p className="text-sm font-semibold uppercase tracking-[0.16em] text-muted">
+                    Owner — {site.ownerName}
+                  </p>
+                  <a
+                    href={site.ownerEmailHref}
+                    className="mt-2 inline-flex items-center gap-3 break-all text-lg text-cream hover:text-copper"
+                  >
+                    <MailIcon className="size-5 shrink-0 text-copper" />
+                    {site.ownerEmail}
+                  </a>
+                </li>
+              </ul>
               <p className="mt-5 text-sm font-semibold uppercase tracking-[0.14em] text-copper">
                 {site.insurance}
               </p>
