@@ -47,6 +47,28 @@ export function ShieldIcon({ className = "size-5" }: IconProps) {
   );
 }
 
+export function FamilyIcon({ className = "size-5" }: IconProps) {
+  return (
+    <svg {...base} className={className}>
+      <circle cx="8" cy="8" r="2.1" />
+      <circle cx="16" cy="8.4" r="1.7" />
+      <path d="M4.5 18.5v-1.2a3.4 3.4 0 0 1 3.4-3.4h.2a3.4 3.4 0 0 1 3.4 3.4v1.2" />
+      <path d="M12.2 18.5v-.8a2.8 2.8 0 0 1 2.8-2.8h.1a2.8 2.8 0 0 1 2.8 2.8v.8" />
+    </svg>
+  );
+}
+
+export function BrandsIcon({ className = "size-5" }: IconProps) {
+  return (
+    <svg {...base} className={className}>
+      <rect x="4" y="4" width="6.5" height="6.5" rx="1.4" />
+      <rect x="13.5" y="4" width="6.5" height="6.5" rx="1.4" />
+      <rect x="4" y="13.5" width="6.5" height="6.5" rx="1.4" />
+      <path d="m14.6 16.8 1.5 1.5 3-3.2" />
+    </svg>
+  );
+}
+
 export function ComfortIcon({ className = "size-5" }: IconProps) {
   return (
     <svg {...base} className={className}>

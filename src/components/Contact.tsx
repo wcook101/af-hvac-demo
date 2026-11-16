@@ -1,6 +1,6 @@
 import { EstimateForm } from "@/components/EstimateForm";
 import { MailIcon, PhoneIcon, PinIcon } from "@/components/Icons";
-import { site } from "@/lib/site";
+import { services, site } from "@/lib/site";
 
 export function Contact() {
   return (
@@ -12,9 +12,17 @@ export function Contact() {
             Contact
           </h2>
           <p className="mt-4 max-w-md text-lg leading-relaxed text-muted">
-            Call, email, or use the estimate form. The form on this demo stays on the page and does
-            not send a message.
+            Call or email A&amp;F HVAC at {site.street} in {site.city}, {site.region}. Heating, air
+            conditioning, refrigeration, and water heater installation are available throughout
+            Lehigh, Carbon, and Northampton counties.
           </p>
+          <ul className="mt-6 grid gap-2 text-sm font-semibold text-cream/90 sm:grid-cols-2">
+            {services.map((service) => (
+              <li key={service.title} className="rounded-2xl border border-white/10 bg-panel px-4 py-3">
+                {service.title}
+              </li>
+            ))}
+          </ul>
 
           <div className="mt-8">
             <p className="text-sm font-semibold uppercase tracking-[0.16em] text-muted">Call</p>

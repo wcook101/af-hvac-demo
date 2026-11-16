@@ -16,21 +16,22 @@ export function Hero() {
 
       <div className="relative z-10 mx-auto w-full min-w-0 max-w-6xl px-4 py-16 md:px-6 md:py-24">
         <div className="animate-rise w-full min-w-0 max-w-2xl">
-          <p className="text-sm font-semibold uppercase tracking-[0.22em] text-copper">
-            Walnutport, Pennsylvania
+          <p className="inline-flex items-center rounded-full border border-copper/60 bg-navy-deep/70 px-4 py-2 text-sm font-bold uppercase tracking-[0.18em] text-copper shadow-lg shadow-black/30">
+            25+ Years Family-Owned
           </p>
-          <h1 className="mt-4 font-display text-4xl font-semibold leading-[1.08] tracking-tight text-cream sm:text-5xl lg:text-6xl">
-            Reliable Heating &amp; Cooling. Year-Round Comfort.
+          <h1 className="mt-5 font-display text-4xl font-semibold leading-[1.08] tracking-tight text-cream sm:text-5xl lg:text-6xl">
+            Heating, Air Conditioning &amp; Refrigeration
           </h1>
           <p className="mt-5 max-w-xl text-lg leading-relaxed text-cream/90 sm:text-xl">
-            Professional heating and air conditioning services in Walnutport, Pennsylvania.
+            Family-owned for over 25 years, A&amp;F HVAC provides professional repairs, service, and
+            installation for all major brands throughout Lehigh, Carbon, and Northampton counties, PA.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a href={site.phoneHref} className="btn-copper h-12 px-6">
               Call {site.phoneDisplay}
             </a>
-            <a href="#contact" className="btn-ghost h-12 px-6">
-              Request an Estimate
+            <a href="#services" className="btn-ghost h-12 px-6">
+              Our Services
             </a>
           </div>
           <ul className="mt-10 grid gap-3 border-t border-white/15 pt-6 text-sm font-semibold text-cream/90 sm:grid-cols-3">

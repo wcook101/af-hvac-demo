@@ -1,11 +1,11 @@
-import { ComfortIcon, PhoneIcon, PinIcon, ShieldIcon } from "@/components/Icons";
+import { BrandsIcon, ComfortIcon, FamilyIcon, ShieldIcon } from "@/components/Icons";
 import { reasons, site } from "@/lib/site";
 
 const icons = {
-  pin: PinIcon,
+  family: FamilyIcon,
+  brands: BrandsIcon,
   comfort: ComfortIcon,
   shield: ShieldIcon,
-  phone: PhoneIcon,
 } as const;
 
 export function WhyChoose() {
@@ -14,14 +14,14 @@ export function WhyChoose() {
       <div className="mx-auto max-w-6xl">
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-sm font-semibold uppercase tracking-[0.22em] text-copper">
-            A local heating and cooling company
+            Family-owned in Walnutport
           </p>
           <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight text-cream sm:text-4xl">
             Why Choose A&amp;F HVAC
           </h2>
           <p className="mt-5 text-balance text-lg leading-relaxed text-muted">
-            A Walnutport company for heating and cooling, with insured service and a direct phone
-            number.
+            An established, fully insured company serving Lehigh, Carbon, and Northampton counties
+            for over 25 years.
           </p>
         </div>
 

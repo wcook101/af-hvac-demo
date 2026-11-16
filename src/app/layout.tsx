@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Outfit, Source_Sans_3 } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
-import { site } from "@/lib/site";
+import { serviceAreas, services, site } from "@/lib/site";
 import "./globals.css";
 
 const outfit = Outfit({
@@ -17,9 +17,9 @@ const sourceSans = Source_Sans_3({
   display: "swap",
 });
 
-const title = "A&F HVAC | Heating & Air Conditioning in Walnutport, PA";
+const title = "A&F HVAC | Heating, Cooling & Refrigeration | Walnutport, PA";
 const description =
-  "A&F HVAC provides heating and air conditioning services in Walnutport, Pennsylvania. Call 610-704-4419 or request an estimate.";
+  "Family-owned for 25+ years, A&F HVAC provides heating, air conditioning, refrigeration repairs, service, installation, and water heater installation throughout Lehigh, Carbon, and Northampton counties, PA.";
 
 const deploymentUrl = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : undefined;
 
@@ -70,9 +70,21 @@ const jsonLd = {
     postalCode: site.postalCode,
     addressCountry: "US",
   },
-  areaServed: {
-    "@type": "City",
-    name: "Walnutport",
+  areaServed: serviceAreas.map((name) => ({
+    "@type": "AdministrativeArea",
+    name,
+  })),
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Heating, air conditioning, refrigeration, and water heater installation",
+    itemListElement: services.map((service) => ({
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: service.title,
+        description: service.text,
+      },
+    })),
   },
   ...(deploymentUrl ? { url: deploymentUrl } : {}),
 };

@@ -11,11 +11,8 @@ export function Services() {
             Services
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-muted">
-            A&amp;F HVAC focuses on heating and air conditioning. These categories show how the
-            work can be presented on the site.
-          </p>
-          <p className="mt-3 text-sm font-medium leading-relaxed text-copper">
-            Proposed services — the owner should confirm this list before the site is published.
+            Repairs, service, maintenance, and installation for heating, air conditioning, and
+            refrigeration, plus professional water heater installation.
           </p>
         </div>
 
@@ -33,14 +30,9 @@ export function Services() {
                   />
                 </div>
                 <div className="flex flex-col justify-center p-6 sm:col-span-3 md:p-8">
-                  <div className="flex items-center justify-between gap-3">
-                    <p className="font-display text-sm font-semibold tracking-[0.18em] text-copper">
-                      {service.number}
-                    </p>
-                    <p className="rounded-full border border-copper/30 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-copper">
-                      Proposed
-                    </p>
-                  </div>
+                  <p className="font-display text-sm font-semibold tracking-[0.18em] text-copper">
+                    {service.number}
+                  </p>
                   <h3 className="mt-4 font-display text-2xl font-semibold tracking-tight text-cream">
                     {service.title}
                   </h3>

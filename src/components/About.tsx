@@ -13,12 +13,13 @@ export function About() {
           </h2>
           <div className="mt-6 space-y-4 text-lg leading-relaxed text-muted">
             <p>
-              A&amp;F HVAC is a heating and air conditioning business in Walnutport, Pennsylvania.
-              The business is located at {site.street}, and customers can reach it by phone or email.
+              A&amp;F HVAC is a family-owned heating, air conditioning, and refrigeration company at{" "}
+              {site.street} in {site.city}, Pennsylvania. The company has been family-owned for over
+              25 years and is fully insured.
             </p>
             <p>
-              Work is centered on heating and cooling for local customers. A&amp;F HVAC is fully
-              insured, as stated on the company business card.
+              Repairs, service, and installation cover all major brands, including water heater
+              installation, throughout Lehigh, Carbon, and Northampton counties.
             </p>
           </div>
         </div>

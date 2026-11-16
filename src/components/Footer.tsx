@@ -16,7 +16,7 @@ export function Footer() {
             />
           </a>
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted">
-            Heating and air conditioning in Walnutport, Pennsylvania.
+            Family-owned heating, air conditioning, and refrigeration in Walnutport, Pennsylvania.
           </p>
         </div>
 
