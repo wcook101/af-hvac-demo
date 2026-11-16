@@ -87,6 +87,9 @@ export function Footer() {
         <div className="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-5 text-sm text-muted md:flex-row md:items-center md:justify-between md:px-6">
           <p>© 2026 A&amp;F HVAC. All rights reserved.</p>
           <p>Equipment photographs are stock images.</p>
+          <Link href="/email" className="hover:text-copper">
+            Employee Email
+          </Link>
         </div>
       </div>
     </footer>
