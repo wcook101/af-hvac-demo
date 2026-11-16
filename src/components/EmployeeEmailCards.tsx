@@ -18,8 +18,18 @@ export function EmployeeEmailCards() {
     try {
       await navigator.clipboard.writeText(email);
       setCopied(email);
+      return;
     } catch {
-      setCopied(null);
+      const field = document.createElement("textarea");
+      field.value = email;
+      field.setAttribute("readonly", "");
+      field.style.position = "fixed";
+      field.style.left = "-9999px";
+      document.body.append(field);
+      field.select();
+      const copiedWithFallback = document.execCommand("copy");
+      field.remove();
+      setCopied(copiedWithFallback ? email : null);
     }
   }
 
