@@ -14,7 +14,7 @@ export default function NotFound() {
           This page is not on the site.
         </h1>
         <p className="mx-auto mt-4 max-w-md text-lg text-muted">
-          The page you requested is not part of the A&amp;F HVAC demo.
+          The page you requested is not available. Choose a page from the menu or return home.
         </p>
         <Link href="/" className="btn-copper mx-auto mt-8 h-12 px-6">
           Back to A&amp;F HVAC

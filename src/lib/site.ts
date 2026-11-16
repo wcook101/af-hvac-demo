@@ -8,57 +8,82 @@ export const site = {
   street: "147 East Zimmer Drive",
   city: "Walnutport",
   region: "PA",
-  postalCode: "18088",
+  locality: "Walnutport, Pennsylvania",
   license: "PA LIC 037268",
   insurance: "Fully Insured",
   experience: "Family-owned for over 25 years",
-  mapsHref:
-    "https://maps.google.com/?q=147+East+Zimmer+Drive,+Walnutport,+PA+18088",
+  mapsHref: "https://maps.google.com/?q=147+East+Zimmer+Drive,+Walnutport,+PA",
 } as const;
 
-export const addressLine = `${site.street}, ${site.city}, ${site.region} ${site.postalCode}`;
+const productionHost =
+  process.env.VERCEL_PROJECT_PRODUCTION_URL?.replace(/^https?:\/\//, "").replace(/\/$/, "") ||
+  "af-hvac-demo.vercel.app";
 
-export const nav = [
-  { href: "#services", label: "Services" },
-  { href: "#about", label: "About" },
-  { href: "#why", label: "Why A&F" },
-  { href: "#contact", label: "Contact" },
+export const siteUrl = `https://${productionHost}`;
+
+export const addressLine = `${site.street}, ${site.city}, ${site.region}`;
+
+export const pageLinks = [
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/service-area", label: "Service Area" },
+  { href: "/contact", label: "Contact" },
 ] as const;
 
 export const serviceAreas = [
-  "Lehigh County, PA",
-  "Carbon County, PA",
-  "Northampton County, PA",
+  {
+    slug: "lehigh-county",
+    name: "Lehigh County",
+    label: "Lehigh County, PA",
+  },
+  {
+    slug: "northampton-county",
+    name: "Northampton County",
+    label: "Northampton County, PA",
+  },
+  {
+    slug: "carbon-county",
+    name: "Carbon County",
+    label: "Carbon County, PA",
+  },
 ] as const;
 
 export const services = [
   {
     number: "01",
     title: "Heating Services",
-    text: "Repairs, service, maintenance, and installation of heating systems for all major brands.",
+    navLabel: "Heating",
+    href: "/heating",
+    text: "Repairs, maintenance, service, and installation for heating systems of all major brands.",
     image: "/images/service-heating.jpg",
-    alt: "Technician working on an indoor heating boiler and piping.",
+    alt: "Technician working on indoor heating equipment and piping.",
   },
   {
     number: "02",
     title: "Air Conditioning",
-    text: "AC repairs, service, maintenance, and installation for all major brands.",
+    navLabel: "Air Conditioning",
+    href: "/air-conditioning",
+    text: "Repairs, maintenance, service, and installation that keep air conditioning equipment performing.",
     image: "/images/service-ac.jpg",
     alt: "Technician servicing a large outdoor air conditioning unit.",
   },
   {
     number: "03",
     title: "Refrigeration",
-    text: "Refrigeration repairs, service, and installation for all major brands.",
+    navLabel: "Refrigeration",
+    href: "/refrigeration",
+    text: "Repairs, service, and installation for refrigeration equipment of all major brands.",
     image: "/images/service-repair.jpg",
-    alt: "Technician using manifold gauges during refrigeration service.",
+    alt: "Technician using manifold gauges during equipment service.",
   },
   {
     number: "04",
     title: "Water Heater Installation",
-    text: "Professional water heater installation from an experienced local company.",
+    navLabel: "Water Heaters",
+    href: "/water-heaters",
+    text: "Professional water heater installation from a family-owned company based in Walnutport.",
     image: "/images/service-install.jpg",
-    alt: "Technician connecting equipment during a professional installation.",
+    alt: "Technician connecting service lines during an equipment installation.",
   },
 ] as const;
 
@@ -83,4 +108,15 @@ export const reasons = [
     text: "Based in Walnutport and serving three Pennsylvania counties.",
     icon: "shield",
   },
+] as const;
+
+export const sitemapPaths = [
+  "/",
+  "/heating",
+  "/air-conditioning",
+  "/refrigeration",
+  "/water-heaters",
+  "/about",
+  "/service-area",
+  "/contact",
 ] as const;

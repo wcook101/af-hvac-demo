@@ -1,5 +1,12 @@
+import Link from "next/link";
 import { PinIcon } from "@/components/Icons";
 import { serviceAreas } from "@/lib/site";
+
+const notes = [
+  "Heating, air conditioning, refrigeration, and water heater installation.",
+  "The same confirmed services from a company based in Walnutport.",
+  "Local coverage for heating, cooling, refrigeration, and water heater installation.",
+];
 
 export function ServiceArea() {
   return (
@@ -13,26 +20,32 @@ export function ServiceArea() {
             Proudly Serving Eastern Pennsylvania
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-muted">
-            A&amp;F HVAC is based in Walnutport, Pennsylvania, and serves homes and businesses
-            across three nearby counties.
+            A&amp;F HVAC is based in Walnutport, Pennsylvania, and serves Lehigh, Northampton, and
+            Carbon counties.
           </p>
         </div>
 
         <ul className="mt-12 grid gap-6 md:grid-cols-3">
-          {serviceAreas.map((county) => (
-            <li
-              key={county}
-              className="rounded-3xl border border-white/10 bg-panel p-7 shadow-xl shadow-black/10"
-            >
-              <span className="grid size-12 place-items-center rounded-2xl bg-copper/15 text-copper">
-                <PinIcon className="size-6" />
-              </span>
-              <h3 className="mt-5 font-display text-2xl font-semibold tracking-tight text-cream">
-                {county}
-              </h3>
+          {serviceAreas.map((area, index) => (
+            <li key={area.slug}>
+              <Link
+                href={`/service-area#${area.slug}`}
+                className="block h-full rounded-3xl border border-white/10 bg-panel p-7 shadow-xl shadow-black/10 transition hover:-translate-y-1 hover:border-copper/40"
+              >
+                <span className="grid size-12 place-items-center rounded-2xl bg-copper/15 text-copper">
+                  <PinIcon className="size-6" />
+                </span>
+                <h3 className="mt-5 font-display text-2xl font-semibold tracking-tight text-cream">
+                  {area.label}
+                </h3>
+                <p className="mt-3 leading-relaxed text-muted">{notes[index]}</p>
+              </Link>
             </li>
           ))}
         </ul>
+        <Link href="/service-area" className="mt-8 inline-flex text-sm font-semibold text-copper hover:underline">
+          Explore the full service area
+        </Link>
       </div>
     </section>
   );

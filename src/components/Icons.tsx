@@ -89,6 +89,14 @@ export function MenuIcon({ className = "size-6" }: IconProps) {
   );
 }
 
+export function ChevronIcon({ className = "size-4" }: IconProps) {
+  return (
+    <svg {...base} className={className}>
+      <path d="m6 9 6 6 6-6" />
+    </svg>
+  );
+}
+
 export function CloseIcon({ className = "size-6" }: IconProps) {
   return (
     <svg {...base} className={className}>

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { MailIcon, PhoneIcon, PinIcon, ShieldIcon } from "@/components/Icons";
 import { addressLine, site } from "@/lib/site";
 
@@ -19,9 +20,12 @@ export function About() {
             </p>
             <p>
               Repairs, service, and installation cover all major brands, including water heater
-              installation, throughout Lehigh, Carbon, and Northampton counties.
+              installation, throughout Lehigh, Northampton, and Carbon counties.
             </p>
           </div>
+          <Link href="/about" className="mt-6 inline-flex text-sm font-semibold text-copper hover:underline">
+            More about A&amp;F HVAC
+          </Link>
         </div>
 
         <aside className="rounded-3xl border border-white/10 bg-panel px-6 py-8 shadow-2xl shadow-black/20 sm:px-8">

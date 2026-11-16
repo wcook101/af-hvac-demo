@@ -2,7 +2,8 @@ import type { Metadata, Viewport } from "next";
 import { Outfit, Source_Sans_3 } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
-import { serviceAreas, services, site } from "@/lib/site";
+import { businessJsonLd } from "@/lib/seo";
+import { site, siteUrl } from "@/lib/site";
 import "./globals.css";
 
 const outfit = Outfit({
@@ -19,12 +20,11 @@ const sourceSans = Source_Sans_3({
 
 const title = "A&F HVAC | Heating, Cooling & Refrigeration | Walnutport, PA";
 const description =
-  "Family-owned for 25+ years, A&F HVAC provides heating, air conditioning, refrigeration repairs, service, installation, and water heater installation throughout Lehigh, Carbon, and Northampton counties, PA.";
-
-const deploymentUrl = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : undefined;
+  "Family-owned for 25+ years, A&F HVAC provides heating, air conditioning, refrigeration repairs, service, installation, and water heater installation throughout Lehigh, Northampton, and Carbon counties, PA.";
 
 export const metadata: Metadata = {
-  ...(deploymentUrl ? { metadataBase: new URL(deploymentUrl), alternates: { canonical: "/" } } : {}),
+  metadataBase: new URL(siteUrl),
+  alternates: { canonical: "/" },
   title: {
     default: title,
     template: "%s | A&F HVAC",
@@ -44,8 +44,7 @@ export const metadata: Metadata = {
     title,
     description,
   },
-  // Demo preview: stay out of search results until the owner approves a live site.
-  robots: { index: false, follow: false },
+  robots: { index: true, follow: true },
   formatDetection: { telephone: true, email: true, address: true },
 };
 
@@ -53,40 +52,6 @@ export const viewport: Viewport = {
   themeColor: "#1e1b3d",
   width: "device-width",
   initialScale: 1,
-};
-
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "HVACBusiness",
-  name: site.name,
-  description,
-  telephone: "+1-610-704-4419",
-  email: site.email,
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: site.street,
-    addressLocality: site.city,
-    addressRegion: site.region,
-    postalCode: site.postalCode,
-    addressCountry: "US",
-  },
-  areaServed: serviceAreas.map((name) => ({
-    "@type": "AdministrativeArea",
-    name,
-  })),
-  hasOfferCatalog: {
-    "@type": "OfferCatalog",
-    name: "Heating, air conditioning, refrigeration, and water heater installation",
-    itemListElement: services.map((service) => ({
-      "@type": "Offer",
-      itemOffered: {
-        "@type": "Service",
-        name: service.title,
-        description: service.text,
-      },
-    })),
-  },
-  ...(deploymentUrl ? { url: deploymentUrl } : {}),
 };
 
 export default function RootLayout({
@@ -102,7 +67,7 @@ export default function RootLayout({
         <Footer />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(businessJsonLd) }}
         />
       </body>
     </html>

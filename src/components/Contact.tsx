@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { EstimateForm } from "@/components/EstimateForm";
 import { MailIcon, PhoneIcon, PinIcon } from "@/components/Icons";
 import { services, site } from "@/lib/site";
@@ -12,14 +13,19 @@ export function Contact() {
             Contact
           </h2>
           <p className="mt-4 max-w-md text-lg leading-relaxed text-muted">
-            Call or email A&amp;F HVAC at {site.street} in {site.city}, {site.region}. Heating, air
-            conditioning, refrigeration, and water heater installation are available throughout
-            Lehigh, Carbon, and Northampton counties.
+            Call or email A&amp;F HVAC at {site.street} in {site.locality}. Heating, air conditioning,
+            refrigeration, and water heater installation are available throughout Lehigh, Northampton,
+            and Carbon counties.
           </p>
           <ul className="mt-6 grid gap-2 text-sm font-semibold text-cream/90 sm:grid-cols-2">
             {services.map((service) => (
-              <li key={service.title} className="rounded-2xl border border-white/10 bg-panel px-4 py-3">
-                {service.title}
+              <li key={service.href}>
+                <Link
+                  href={service.href}
+                  className="block rounded-2xl border border-white/10 bg-panel px-4 py-3 hover:border-copper/40 hover:text-copper"
+                >
+                  {service.title}
+                </Link>
               </li>
             ))}
           </ul>
@@ -58,9 +64,7 @@ export function Contact() {
                   <PinIcon className="mt-1 size-5 shrink-0 text-copper" />
                   <span>
                     {site.street}
-                    <span className="block">
-                      {site.city}, {site.region} {site.postalCode}
-                    </span>
+                    <span className="block">{site.locality}</span>
                   </span>
                 </a>
               </address>

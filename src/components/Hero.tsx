@@ -23,8 +23,9 @@ export function Hero() {
             Heating, Air Conditioning &amp; Refrigeration
           </h1>
           <p className="mt-5 max-w-xl text-lg leading-relaxed text-cream/90 sm:text-xl">
-            Family-owned for over 25 years, A&amp;F HVAC provides professional repairs, service, and
-            installation for all major brands throughout Lehigh, Carbon, and Northampton counties, PA.
+            Family-owned for over 25 years, A&amp;F HVAC provides professional heating, air conditioning,
+            and refrigeration repairs, service, and installation for all major brands throughout Lehigh,
+            Northampton, and Carbon counties in Pennsylvania.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a href={site.phoneHref} className="btn-copper h-12 px-6">

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { services } from "@/lib/site";
 
 export function Services() {
@@ -18,8 +19,11 @@ export function Services() {
 
         <ul className="mt-12 grid gap-6 lg:grid-cols-2">
           {services.map((service) => (
-            <li key={service.title}>
-              <article className="group grid h-full overflow-hidden rounded-3xl border border-white/10 bg-panel shadow-xl shadow-black/10 transition duration-300 hover:-translate-y-1 hover:border-copper/40 sm:grid-cols-5">
+            <li key={service.href}>
+              <Link
+                href={service.href}
+                className="group grid h-full overflow-hidden rounded-3xl border border-white/10 bg-panel shadow-xl shadow-black/10 transition duration-300 hover:-translate-y-1 hover:border-copper/40 sm:grid-cols-5"
+              >
                 <div className="relative min-h-52 sm:col-span-2 sm:min-h-full">
                   <Image
                     src={service.image}
@@ -37,8 +41,9 @@ export function Services() {
                     {service.title}
                   </h3>
                   <p className="mt-3 leading-relaxed text-muted">{service.text}</p>
+                  <p className="mt-4 text-sm font-semibold text-copper">Learn more</p>
                 </div>
-              </article>
+              </Link>
             </li>
           ))}
         </ul>

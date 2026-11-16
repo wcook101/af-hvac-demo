@@ -27,7 +27,7 @@ export function EstimateForm() {
         Request an Estimate
       </h3>
       <p id="estimate-demo-note" className="mt-4 rounded-2xl border border-copper/40 bg-copper/10 px-4 py-3 text-sm leading-relaxed text-cream">
-        Demo only. This form does not send or save what you type.
+        This form stays in your browser. It does not send or save what you type.
       </p>
 
       <div className="mt-6 grid gap-4">
@@ -92,7 +92,7 @@ export function EstimateForm() {
 
       {submitted ? (
         <p role="status" className="mt-5 rounded-2xl border border-white/15 bg-navy-deep px-4 py-3 text-sm leading-relaxed text-cream">
-          Preview only. Your note stayed in this browser and was not sent or stored.
+          Your note stayed in this browser and was not sent or stored.
         </p>
       ) : null}
 
