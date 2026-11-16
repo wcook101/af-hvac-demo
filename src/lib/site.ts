@@ -15,11 +15,7 @@ export const site = {
   mapsHref: "https://maps.google.com/?q=147+East+Zimmer+Drive,+Walnutport,+PA",
 } as const;
 
-const productionHost =
-  process.env.VERCEL_PROJECT_PRODUCTION_URL?.replace(/^https?:\/\//, "").replace(/\/$/, "") ||
-  "af-hvac-demo.vercel.app";
-
-export const siteUrl = `https://${productionHost}`;
+export const siteUrl = "https://www.afhvacservice.com";
 
 export const addressLine = `${site.street}, ${site.city}, ${site.region}`;
 
