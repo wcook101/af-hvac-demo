@@ -162,7 +162,7 @@ export function Header() {
           <Link
             href="/email"
             aria-current={pathname === "/email" ? "page" : undefined}
-            className="btn-ghost hidden h-11 shrink-0 px-3 text-sm lg:inline-flex"
+            className="btn-ghost !hidden h-11 shrink-0 px-3 text-sm lg:!inline-flex"
           >
             <MailIcon className="size-4" />
             Webmail
