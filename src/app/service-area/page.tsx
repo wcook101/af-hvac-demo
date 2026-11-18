@@ -17,7 +17,10 @@ export const metadata = pageMeta(
 export default function ServiceAreaPage() {
   return (
     <main id="main">
-      <PageHeader eyebrow="Based in Walnutport, Pennsylvania" title="HVAC & Refrigeration Services in Eastern Pennsylvania">
+      <PageHeader
+        eyebrow="Based in Walnutport, Pennsylvania"
+        title="HVAC Service in Lehigh, Northampton, and Carbon Counties"
+      >
         <p>
           A&amp;F HVAC is based at {site.street} in Walnutport and serves three Pennsylvania counties.
           Heating, air conditioning, refrigeration, and water heater installation are available in each

@@ -6,9 +6,9 @@ import { PageHeader } from "@/components/PageHeader";
 import { PageSection } from "@/components/PageSection";
 import { pageMeta, serviceJsonLd } from "@/lib/seo";
 
-const title = "Air Conditioning Repair & Installation | A&F HVAC";
+const title = "Air Conditioning Repair & Installation | A&F HVAC | Walnutport, PA";
 const description =
-  "Professional air conditioning repairs, maintenance, service, and installation in Lehigh, Northampton, and Carbon counties, PA. Contact A&F HVAC.";
+  "A&F HVAC in Walnutport provides air conditioning repairs, maintenance, service, and installation throughout Lehigh, Northampton, and Carbon counties, PA.";
 
 export const metadata = pageMeta(title, description, "/air-conditioning");
 
@@ -80,8 +80,16 @@ export default function AirConditioningPage() {
         <p>
           From 147 East Zimmer Drive in Walnutport, A&amp;F HVAC installs air conditioning equipment
           throughout{" "}
-          <Link href="/service-area" className="text-copper hover:underline">
-            Lehigh, Northampton, and Carbon counties
+          <Link href="/service-area#lehigh-county" className="text-copper hover:underline">
+            Lehigh County
+          </Link>
+          ,{" "}
+          <Link href="/service-area#northampton-county" className="text-copper hover:underline">
+            Northampton County
+          </Link>
+          , and{" "}
+          <Link href="/service-area#carbon-county" className="text-copper hover:underline">
+            Carbon County
           </Link>
           . Call with the age of the system and what it is doing, and the company can talk through
           repair or installation.

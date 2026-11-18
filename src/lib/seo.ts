@@ -30,23 +30,46 @@ const postalAddress = {
   addressCountry: "US",
 };
 
-const areasServed = serviceAreas.map((area) => ({
-  "@type": "AdministrativeArea",
-  name: `${area.name}, Pennsylvania`,
-}));
+const businessId = `${siteUrl}/#business`;
+
+const areasServed = [
+  {
+    "@type": "City",
+    name: "Walnutport",
+    containedInPlace: { "@type": "State", name: "Pennsylvania" },
+  },
+  ...serviceAreas.map((area) => ({
+    "@type": "AdministrativeArea",
+    name: `${area.name}, Pennsylvania`,
+  })),
+];
 
 export const businessJsonLd = {
   "@context": "https://schema.org",
-  "@type": "HVACBusiness",
+  "@type": ["HVACBusiness", "LocalBusiness"],
+  "@id": businessId,
   name: site.name,
   description:
-    "Family-owned for 25+ years, A&F HVAC provides heating, air conditioning, refrigeration repairs, service, installation, and water heater installation throughout Lehigh, Northampton, and Carbon counties, PA.",
+    "Family-owned A&F HVAC in Walnutport, PA provides heating, air conditioning, refrigeration, and water heater installation in Lehigh, Northampton, and Carbon counties.",
   url: siteUrl,
   logo: `${siteUrl}/brand/af-hvac-logo.png`,
   image: `${siteUrl}/brand/af-hvac-logo.png`,
   telephone: "+1-610-704-4419",
   email: site.email,
   address: postalAddress,
+  identifier: {
+    "@type": "PropertyValue",
+    name: "Pennsylvania contractor license",
+    value: site.license,
+  },
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+1-610-704-4419",
+    email: site.email,
+    contactType: "customer service",
+    areaServed: ["Walnutport", "Lehigh County", "Northampton County", "Carbon County"],
+    availableLanguage: "English",
+  },
   areaServed: areasServed,
   hasOfferCatalog: {
     "@type": "OfferCatalog",
@@ -70,12 +93,7 @@ export function serviceJsonLd(name: string, description: string, path: string) {
     name,
     description,
     url: `${siteUrl}${path}`,
-    provider: {
-      "@type": "HVACBusiness",
-      name: site.name,
-      telephone: "+1-610-704-4419",
-      address: postalAddress,
-    },
+    provider: { "@id": businessId },
     areaServed: areasServed,
   };
 }

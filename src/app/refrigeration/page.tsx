@@ -5,7 +5,7 @@ import { PageHeader } from "@/components/PageHeader";
 import { PageSection } from "@/components/PageSection";
 import { pageMeta, serviceJsonLd } from "@/lib/seo";
 
-const title = "Refrigeration Repair & Service | A&F HVAC | Pennsylvania";
+const title = "Refrigeration Repair & Installation | A&F HVAC | Walnutport, PA";
 const description =
   "A&F HVAC provides refrigeration repairs, service, and installation throughout Lehigh, Northampton, and Carbon counties, Pennsylvania.";
 

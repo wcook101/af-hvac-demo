@@ -9,7 +9,11 @@ import { pageMeta } from "@/lib/seo";
 const description =
   "A&F HVAC is a fully insured, family-owned heating, air conditioning, and refrigeration company in Walnutport, PA, serving Lehigh, Northampton, and Carbon counties for over 25 years.";
 
-export const metadata = pageMeta("About A&F HVAC | Family-Owned for 25+ Years", description, "/about");
+export const metadata = pageMeta(
+  "About A&F HVAC | Family-Owned HVAC in Walnutport, PA",
+  description,
+  "/about",
+);
 
 export default function AboutPage() {
   return (
