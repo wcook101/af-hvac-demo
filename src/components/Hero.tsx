@@ -19,13 +19,16 @@ export function Hero() {
           <p className="inline-flex items-center rounded-full border border-copper/60 bg-navy-deep/70 px-4 py-2 text-sm font-bold uppercase tracking-[0.18em] text-copper shadow-lg shadow-black/30">
             25+ Years Family-Owned
           </p>
-          <h1 className="mt-5 font-display text-4xl font-semibold leading-[1.08] tracking-tight text-cream sm:text-5xl lg:text-6xl">
-            Heating, Air Conditioning &amp; Refrigeration
+          <h1 className="mt-5 font-display font-semibold tracking-tight text-cream">
+            <span className="block text-3xl leading-none text-copper sm:text-4xl">A&amp;F HVAC</span>
+            <span className="mt-3 block text-4xl leading-[1.08] sm:text-5xl lg:text-6xl">
+              Heating, Air Conditioning &amp; Refrigeration
+            </span>
           </h1>
           <p className="mt-5 max-w-xl text-lg leading-relaxed text-cream/90 sm:text-xl">
-            Family-owned for over 25 years, A&amp;F HVAC provides professional heating, air conditioning,
-            and refrigeration repairs, service, and installation for all major brands throughout Lehigh,
-            Northampton, and Carbon counties in Pennsylvania.
+            Family-owned in Walnutport, PA for over 25 years, A&amp;F HVAC provides heating, air
+            conditioning, and refrigeration repairs, service, and installation for all major brands
+            throughout Lehigh, Northampton, and Carbon counties.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a href={site.phoneHref} className="btn-copper h-12 px-6">
