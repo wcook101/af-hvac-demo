@@ -1,12 +1,34 @@
 const windowMs = 15 * 60 * 1000;
 const maxAttempts = 5;
-const store = globalThis as typeof globalThis & { __afEstimateHits?: Map<string, number[]> };
+const store = globalThis as typeof globalThis & {
+  __afEstimateHits?: Map<string, number[]>;
+  __afEstimateDuplicates?: Map<string, number>;
+};
 const hits = store.__afEstimateHits ?? new Map<string, number[]>();
 store.__afEstimateHits = hits;
 
 export function clientAddress(request: Request) {
   const forwarded = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim();
   return (forwarded || request.headers.get("x-real-ip") || "unknown").slice(0, 64);
+}
+
+const duplicates = store.__afEstimateDuplicates ?? new Map<string, number>();
+store.__afEstimateDuplicates = duplicates;
+
+function pruneDuplicates(now: number) {
+  for (const [entry, time] of duplicates) {
+    if (now - time >= 2 * 60 * 1000) duplicates.delete(entry);
+  }
+}
+
+export function duplicateEstimate(key: string, fingerprint: string, now = Date.now()) {
+  pruneDuplicates(now);
+  return duplicates.has(`${key}:${fingerprint}`);
+}
+
+export function rememberEstimate(key: string, fingerprint: string, now = Date.now()) {
+  pruneDuplicates(now);
+  duplicates.set(`${key}:${fingerprint}`, now);
 }
 
 export function limitEstimateRequests(key: string, now = Date.now()) {

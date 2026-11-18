@@ -80,9 +80,9 @@ export function estimateMessage(value: EstimateRequest, submittedAt = new Date()
 
   return {
     from: "A&F HVAC <service@afhvacservice.com>",
-    to: [site.email],
-    reply_to: value.email,
-    subject: `Estimate request from ${value.name}`.slice(0, 180),
+    to: site.email,
+    replyTo: value.email,
+    subject: "New Website Inquiry — A&F HVAC",
     text: [
       `Name: ${value.name}`,
       `Phone: ${value.phone}`,

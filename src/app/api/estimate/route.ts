@@ -1,5 +1,6 @@
-import { estimateMessage, validateEstimate } from "@/lib/estimate-request";
-import { clientAddress, limitEstimateRequests } from "@/lib/rate-limit";
+import { validateEstimate } from "@/lib/estimate-request";
+import { clientAddress, duplicateEstimate, limitEstimateRequests, rememberEstimate } from "@/lib/rate-limit";
+import { sendEstimate } from "@/lib/smtp";
 import { NextResponse } from "next/server";
 
 const notSent = "The request was not sent. Please try again.";
@@ -41,39 +42,19 @@ export async function POST(request: Request) {
 
   const input = body && typeof body === "object" ? (body as Record<string, unknown>) : {};
   const parsed = validateEstimate(input);
-  if ("honeypot" in parsed) return NextResponse.json({ ok: true }, { headers: { "Cache-Control": "no-store" } });
+  if ("honeypot" in parsed) return error(notSent, 400);
   if (!parsed.ok) return error(parsed.error, 400);
-
-  const apiKey = process.env.RESEND_API_KEY;
-  if (!apiKey) {
-    return error(
-      "The request was not sent. Email delivery is not configured yet.",
-      503,
-    );
+  const fingerprint = `${parsed.value.email}:${parsed.value.service}:${parsed.value.message}`.toLowerCase();
+  if (duplicateEstimate(clientAddress(request), fingerprint)) {
+    return error("The request was not sent. This inquiry was already submitted.", 409);
   }
 
-  const message = estimateMessage(parsed.value);
-  let response: Response;
-  try {
-    response = await fetch("https://api.resend.com/emails", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${apiKey}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(message),
-      signal: AbortSignal.timeout(12_000),
-    });
-  } catch (reason) {
-    console.error("Estimate email request failed", reason instanceof Error ? reason.name : "unknown");
-    return error(notSent, 502);
+  const sent = await sendEstimate(parsed.value);
+  if (!sent.ok && sent.reason === "unconfigured") {
+    return error("The request was not sent. Email delivery is not configured yet.", 503);
   }
+  if (!sent.ok) return error(notSent, 502);
 
-  const payload = (await response.json().catch(() => null)) as { id?: unknown } | null;
-  if (!response.ok || typeof payload?.id !== "string") {
-    console.error("Estimate email was rejected", response.status);
-    return error(notSent, 502);
-  }
-
+  rememberEstimate(clientAddress(request), fingerprint);
   return NextResponse.json({ ok: true }, { headers: { "Cache-Control": "no-store" } });
 }

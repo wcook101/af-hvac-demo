@@ -1,5 +1,6 @@
 "use client";
 
+import { validateEstimate } from "@/lib/estimate-request";
 import { services, site } from "@/lib/site";
 import { useEffect, useRef, useState, type FormEvent } from "react";
 
@@ -34,6 +35,13 @@ export function EstimateForm() {
     const form = event.currentTarget;
     if (!form.checkValidity()) {
       form.reportValidity();
+      return;
+    }
+
+    const parsed = validateEstimate(fields);
+    if (!parsed.ok) {
+      setStatus("error");
+      setError("error" in parsed ? parsed.error : "The request was not sent. Please try again.");
       return;
     }
 
