@@ -1,91 +1,79 @@
+import { estimateMessage, validateEstimate } from "@/lib/estimate-request";
+import { clientAddress, limitEstimateRequests } from "@/lib/rate-limit";
 import { NextResponse } from "next/server";
-import { services, site } from "@/lib/site";
 
-const allowedServices = new Set<string>([...services.map((service) => service.title), "Not sure yet"]);
+const notSent = "The request was not sent. Please try again.";
 
-function text(value: unknown, max: number) {
-  return typeof value === "string" ? value.trim().slice(0, max) : "";
+function error(message: string, status: number, retryAfter?: number) {
+  return NextResponse.json(
+    { ok: false, error: message },
+    {
+      status,
+      headers: {
+        "Cache-Control": "no-store",
+        ...(retryAfter ? { "Retry-After": String(retryAfter) } : {}),
+      },
+    },
+  );
 }
 
 export async function POST(request: Request) {
+  const length = Number(request.headers.get("content-length") || 0);
+  if (Number.isFinite(length) && length > 20_000) {
+    return error("The request was not sent. Please shorten the message.", 413);
+  }
+
   let body: unknown;
   try {
     body = await request.json();
   } catch {
-    return NextResponse.json(
-      { ok: false, error: "The request was not sent. Please try again or call 610-704-4419." },
-      { status: 400 },
+    return error(notSent, 400);
+  }
+
+  const limit = limitEstimateRequests(clientAddress(request));
+  if (!limit.allowed) {
+    return error(
+      "The request was not sent. Please wait a few minutes.",
+      429,
+      limit.retryAfter,
     );
   }
 
   const input = body && typeof body === "object" ? (body as Record<string, unknown>) : {};
-  if (text(input.company, 200)) {
-    return NextResponse.json(
-      { ok: false, error: "The request was not sent." },
-      { status: 400 },
-    );
-  }
-
-  const name = text(input.name, 120);
-  const phone = text(input.phone, 40);
-  const email = text(input.email, 200);
-  const service = text(input.service, 80);
-  const message = text(input.message, 5000);
-
-  if (!name || !phone || !email || !service || !message || !allowedServices.has(service)) {
-    return NextResponse.json(
-      { ok: false, error: "The request was not sent. Complete every field and try again." },
-      { status: 400 },
-    );
-  }
-
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    return NextResponse.json(
-      { ok: false, error: "The request was not sent. Enter a valid email address." },
-      { status: 400 },
-    );
-  }
+  const parsed = validateEstimate(input);
+  if ("honeypot" in parsed) return NextResponse.json({ ok: true }, { headers: { "Cache-Control": "no-store" } });
+  if (!parsed.ok) return error(parsed.error, 400);
 
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) {
-    return NextResponse.json(
-      {
-        ok: false,
-        error: "The request was not sent. Email delivery is not configured yet. Call 610-704-4419.",
+    return error(
+      "The request was not sent. Email delivery is not configured yet.",
+      503,
+    );
+  }
+
+  const message = estimateMessage(parsed.value);
+  let response: Response;
+  try {
+    response = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+        "Content-Type": "application/json",
       },
-      { status: 503 },
-    );
+      body: JSON.stringify(message),
+      signal: AbortSignal.timeout(12_000),
+    });
+  } catch (reason) {
+    console.error("Estimate email request failed", reason instanceof Error ? reason.name : "unknown");
+    return error(notSent, 502);
   }
 
-  const response = await fetch("https://api.resend.com/emails", {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${apiKey}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      from: "A&F HVAC <service@afhvacservice.com>",
-      to: [site.email],
-      reply_to: email,
-      subject: `Estimate request from ${name.replace(/[\r\n]+/g, " ")}`,
-      text: [
-        `Name: ${name}`,
-        `Phone: ${phone}`,
-        `Email: ${email}`,
-        `Service: ${service}`,
-        "",
-        message,
-      ].join("\n"),
-    }),
-  });
-
-  if (!response.ok) {
+  const payload = (await response.json().catch(() => null)) as { id?: unknown } | null;
+  if (!response.ok || typeof payload?.id !== "string") {
     console.error("Estimate email was rejected", response.status);
-    return NextResponse.json(
-      { ok: false, error: "The request was not sent. Please call 610-704-4419." },
-      { status: 502 },
-    );
+    return error(notSent, 502);
   }
 
-  return NextResponse.json({ ok: true });
+  return NextResponse.json({ ok: true }, { headers: { "Cache-Control": "no-store" } });
 }
