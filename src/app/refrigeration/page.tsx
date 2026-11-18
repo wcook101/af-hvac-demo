@@ -15,7 +15,12 @@ export default function RefrigerationPage() {
   return (
     <main id="main">
       <JsonLd data={serviceJsonLd("Refrigeration repair, service, and installation", description, "/refrigeration")} />
-      <PageHeader eyebrow="A core A&F HVAC service" title="Refrigeration Repair, Service & Installation">
+      <PageHeader
+        eyebrow="A core A&F HVAC service"
+        title="Refrigeration Repair, Service & Installation"
+        crumb="Refrigeration"
+        path="/refrigeration"
+      >
         <p>
           Refrigeration is not an afterthought at A&amp;F HVAC. It is one of the services the company
           provides alongside heating and air conditioning: repairs, service, and installation for all

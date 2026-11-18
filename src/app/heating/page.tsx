@@ -16,7 +16,12 @@ export default function HeatingPage() {
   return (
     <main id="main">
       <JsonLd data={serviceJsonLd("Heating repair, service, and installation", description, "/heating")} />
-      <PageHeader eyebrow="Heating in Walnutport, Pennsylvania" title="Heating Repair, Service & Installation">
+      <PageHeader
+        eyebrow="Heating in Walnutport, Pennsylvania"
+        title="Heating Repair, Service & Installation"
+        crumb="Heating"
+        path="/heating"
+      >
         <p>
           Reliable heating equipment is what keeps a building comfortable when the weather turns cold.
           A&amp;F HVAC is a family-owned company in Walnutport with more than 25 years in business, and

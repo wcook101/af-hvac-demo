@@ -7,7 +7,7 @@ import { addressLine, services, site } from "@/lib/site";
 import { pageMeta } from "@/lib/seo";
 
 const description =
-  "A&F HVAC is a fully insured, family-owned heating, air conditioning, and refrigeration company in Walnutport, PA, serving Lehigh, Northampton, and Carbon counties for over 25 years.";
+  "A&F HVAC is family-owned in Walnutport, PA, offering heating, air conditioning, refrigeration, and water heater installation for more than 25 years.";
 
 export const metadata = pageMeta(
   "About A&F HVAC | Family-Owned HVAC in Walnutport, PA",
@@ -18,7 +18,12 @@ export const metadata = pageMeta(
 export default function AboutPage() {
   return (
     <main id="main">
-      <PageHeader eyebrow="Walnutport, Pennsylvania" title="Family-Owned HVAC Service for Over 25 Years">
+      <PageHeader
+        eyebrow="Walnutport, Pennsylvania"
+        title="Family-Owned HVAC Service for Over 25 Years"
+        crumb="About"
+        path="/about"
+      >
         <p>
           A&amp;F HVAC is an established family-owned business at {site.street} in Walnutport. For more
           than 25 years, local customers have been able to call one company for heating, air
@@ -79,8 +84,9 @@ export default function AboutPage() {
               <Image
                 src="/brand/af-hvac-logo.png"
                 alt="A&F HVAC fox logo"
-                width={2172}
-                height={724}
+                width={1125}
+                height={375}
+                sizes="(min-width: 1024px) 28rem, 100vw"
                 className="mx-auto h-auto w-full max-w-md object-contain"
               />
             </div>

@@ -18,7 +18,12 @@ export default function AirConditioningPage() {
       <JsonLd
         data={serviceJsonLd("Air conditioning repair, service, and installation", description, "/air-conditioning")}
       />
-      <PageHeader eyebrow="Cooling across eastern Pennsylvania" title="Air Conditioning Repair, Service & Installation">
+      <PageHeader
+        eyebrow="Cooling across eastern Pennsylvania"
+        title="Air Conditioning Repair, Service & Installation"
+        crumb="Air Conditioning"
+        path="/air-conditioning"
+      >
         <p>
           Air conditioning earns its keep on the hottest days, when a building either stays comfortable
           or does not. A&amp;F HVAC provides AC repairs, maintenance, service, and installation for all

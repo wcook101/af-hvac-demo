@@ -97,3 +97,24 @@ export function serviceJsonLd(name: string, description: string, path: string) {
     areaServed: areasServed,
   };
 }
+
+export function breadcrumbJsonLd(path: string, currentName: string) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: siteUrl,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: currentName,
+        item: `${siteUrl}${path}`,
+      },
+    ],
+  };
+}

@@ -20,7 +20,7 @@ const sourceSans = Source_Sans_3({
 
 const title = "A&F HVAC | Heating, Cooling & Refrigeration | Walnutport, PA";
 const description =
-  "Family-owned A&F HVAC in Walnutport, PA provides heating, air conditioning, refrigeration, and water heater installation in Lehigh, Northampton, and Carbon counties.";
+  "Family-owned A&F HVAC in Walnutport provides heating, cooling, refrigeration, and water heater installation in Lehigh, Northampton, and Carbon counties.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

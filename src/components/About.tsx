@@ -33,8 +33,9 @@ export function About() {
             <Image
               src="/brand/af-hvac-logo.png"
               alt="A&F HVAC, Heating and Air Conditioning"
-              width={2172}
-              height={724}
+              width={1125}
+              height={375}
+              sizes="(min-width: 1024px) 28rem, 100vw"
               className="mx-auto h-auto w-full max-w-md object-contain"
             />
           </div>

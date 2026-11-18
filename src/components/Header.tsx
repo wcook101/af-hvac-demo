@@ -14,7 +14,18 @@ export function Header() {
   const pinned = useRef(false);
   const [open, setOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [trackedPath, setTrackedPath] = useState(pathname);
   const serviceActive = services.some((service) => service.href === pathname);
+
+  if (trackedPath !== pathname) {
+    setTrackedPath(pathname);
+    setOpen(false);
+    setServicesOpen(false);
+  }
+
+  useEffect(() => {
+    pinned.current = false;
+  }, [pathname]);
 
   function closeServices() {
     pinned.current = false;
@@ -39,11 +50,6 @@ export function Header() {
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
   }
-
-  useEffect(() => {
-    closeServices();
-    setOpen(false);
-  }, [pathname]);
 
   useEffect(() => {
     if (!open && !servicesOpen) return;
@@ -86,9 +92,10 @@ export function Header() {
           <Image
             src="/brand/af-hvac-logo.png"
             alt="A&F HVAC, Heating and Air Conditioning"
-            width={2172}
-            height={724}
-            priority
+            width={1125}
+            height={375}
+            sizes="(min-width: 1024px) 375px, 260px"
+            loading="eager"
             className="h-auto w-auto max-h-none max-w-full object-contain object-left min-[400px]:max-w-[260px] lg:max-h-[125px] lg:max-w-[375px]"
           />
         </Link>

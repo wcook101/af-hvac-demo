@@ -7,7 +7,7 @@ import { pageMeta, serviceJsonLd } from "@/lib/seo";
 
 const title = "Water Heater Installation | A&F HVAC | Walnutport, PA";
 const description =
-  "Need water heater installation in Lehigh, Northampton, or Carbon County, PA? Contact family-owned A&F HVAC.";
+  "A&F HVAC installs water heaters from its family-owned shop in Walnutport, PA, for customers throughout Lehigh, Northampton, and Carbon counties.";
 
 export const metadata = pageMeta(title, description, "/water-heaters");
 
@@ -15,7 +15,12 @@ export default function WaterHeatersPage() {
   return (
     <main id="main">
       <JsonLd data={serviceJsonLd("Water heater installation", description, "/water-heaters")} />
-      <PageHeader eyebrow="Water heater installation" title="Professional Water Heater Installation">
+      <PageHeader
+        eyebrow="Water heater installation"
+        title="Professional Water Heater Installation"
+        crumb="Water Heaters"
+        path="/water-heaters"
+      >
         <p>
           Hot water is part of an ordinary day, and it depends on a water heater that was installed
           correctly. A&amp;F HVAC provides professional water heater installation for customers in

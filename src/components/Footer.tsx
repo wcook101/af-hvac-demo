@@ -11,8 +11,9 @@ export function Footer() {
             <Image
               src="/brand/af-hvac-logo.png"
               alt="A&F HVAC, Heating and Air Conditioning"
-              width={2172}
-              height={724}
+              width={1125}
+              height={375}
+              sizes="272px"
               className="h-auto w-full max-w-[17rem] object-contain"
             />
           </Link>

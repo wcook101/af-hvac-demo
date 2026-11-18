@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { EstimateForm } from "@/components/EstimateForm";
 import { MailIcon, PhoneIcon, PinIcon } from "@/components/Icons";
 import { serviceAreas, services, site } from "@/lib/site";
@@ -14,13 +15,22 @@ export default function ContactPage() {
     <main id="main">
       <header className="border-b border-white/10 bg-navy-deep px-4 py-16 md:px-6 md:py-20">
         <div className="mx-auto max-w-6xl">
+          <Breadcrumbs path="/contact" current="Contact" />
           <p className="text-sm font-semibold uppercase tracking-[0.22em] text-copper">Walnutport, Pennsylvania</p>
           <h1 className="mt-3 font-display text-4xl font-semibold tracking-tight text-cream sm:text-5xl">
             Contact A&amp;F HVAC
           </h1>
-          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted">
-            Call, email, or request an estimate. A&amp;F HVAC is at {site.street} in {site.locality}.
-          </p>
+          <div className="mt-5 max-w-3xl space-y-4 text-lg leading-relaxed text-muted">
+            <p>
+              Call, email, or send an estimate request. A&amp;F HVAC is a family-owned company at{" "}
+              {site.street} in {site.locality}, with more than 25 years in business.
+            </p>
+            <p>
+              Heating, air conditioning, and refrigeration include repairs, service, and installation for
+              all major brands. Water heater work is installation. Service is available in Lehigh,
+              Northampton, and Carbon counties.
+            </p>
+          </div>
         </div>
       </header>
 
@@ -83,6 +93,21 @@ export default function ContactPage() {
               </ul>
               <p className="mt-5 text-sm font-semibold uppercase tracking-[0.14em] text-copper">
                 {site.insurance}
+              </p>
+            </div>
+
+            <h2 className="mt-12 font-display text-3xl font-semibold tracking-tight text-cream">
+              How to request service
+            </h2>
+            <div className="mt-4 space-y-4 text-lg leading-relaxed text-muted">
+              <p>
+                The direct number is {site.phoneDisplay}. The form on this page sends your name, phone
+                number, email address, the service you need, and your message to {site.email}. You can
+                also email that address, or write to {site.ownerName} at {site.ownerEmail}.
+              </p>
+              <p>
+                A useful request names the service, the town or county, and what the equipment is doing
+                or what needs to be installed. That is enough for A&amp;F HVAC to respond.
               </p>
             </div>
 

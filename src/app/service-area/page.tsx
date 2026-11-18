@@ -20,6 +20,8 @@ export default function ServiceAreaPage() {
       <PageHeader
         eyebrow="Based in Walnutport, Pennsylvania"
         title="HVAC Service in Lehigh, Northampton, and Carbon Counties"
+        crumb="Service Area"
+        path="/service-area"
       >
         <p>
           A&amp;F HVAC is based at {site.street} in Walnutport and serves three Pennsylvania counties.
