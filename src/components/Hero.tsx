@@ -21,6 +21,7 @@ export function Hero() {
           </p>
           <h1 className="mt-5 font-display font-semibold tracking-tight text-cream">
             <span className="block text-3xl leading-none text-copper sm:text-4xl">A&amp;F HVAC</span>
+            <span className="sr-only">: </span>
             <span className="mt-3 block text-4xl leading-[1.08] sm:text-5xl lg:text-6xl">
               Heating, Air Conditioning &amp; Refrigeration
             </span>
