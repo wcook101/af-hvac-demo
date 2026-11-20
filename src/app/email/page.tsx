@@ -3,7 +3,7 @@ import { pageMeta } from "@/lib/seo";
 const webmailLoginUrl = "https://gvam1318.siteground.biz/webmail/log-in/";
 
 const mailboxes = [
-  { name: "James F.", email: "jamesj@afhvacservice.com" },
+  { name: "James J.", email: "jamesj@afhvacservice.com" },
   { name: "James M.", email: "jamesM@afhvacservice.com" },
   { name: "Service", email: "service@afhvacservice.com" },
 ] as const;
