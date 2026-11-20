@@ -3,7 +3,7 @@ import { pageMeta } from "@/lib/seo";
 const webmailLoginUrl = "https://gvam1318.siteground.biz/webmail/log-in/";
 
 const mailboxes = [
-  { name: "James F.", email: "jamesF@afhvacservice.com" },
+  { name: "James F.", email: "jamesj@afhvacservice.com" },
   { name: "James M.", email: "jamesM@afhvacservice.com" },
   { name: "Service", email: "service@afhvacservice.com" },
 ] as const;
@@ -38,7 +38,9 @@ export default function EmployeeEmailPage() {
             {mailboxes.map((mailbox) => (
               <li key={mailbox.email} className="px-6 py-5">
                 <p className="font-display text-xl font-semibold text-cream">{mailbox.name}</p>
-                <p className="mt-1 break-all text-base text-muted">{mailbox.email}</p>
+                <a href={`mailto:${mailbox.email}`} className="mt-1 block break-all text-base text-muted hover:text-copper">
+                  {mailbox.email}
+                </a>
               </li>
             ))}
           </ul>
