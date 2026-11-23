@@ -21,6 +21,6 @@ Equipment photographs are stock images from Pexels, used for this demo:
 - Ductless mini-split indoor unit: Pexels 38788452 (NEOSiAM, Pexels License)
 - Side-discharge outdoor unit: Pexels 39318564 (Nevtuğ Yalçın, Pexels License)
 
-Dealer marks are unmodified official files: the Carrier horizontal lockup from the Carrier Ad Kit, and the U.S. Whirlpool brand logo from Whirlpool Corporation’s logo library. Ducane’s logo is not included because Allied Air’s site terms do not grant permission to reuse it.
+Dealer marks are unmodified official files: the Carrier horizontal lockup from the Carrier Ad Kit, the U.S. Whirlpool brand logo from Whirlpool Corporation’s logo library, and the Ducane logo from ducanehvac.com. The owner confirmed A&F HVAC may use the Ducane mark.
 
 Confirm with the owner before a public launch: service list, PA license 037268, hours, service area, and whether search engines should index the site.

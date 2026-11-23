@@ -48,9 +48,9 @@ export const dealers = [
   {
     name: "Ducane",
     text: "Heating and cooling equipment",
-    logo: "",
-    logoWidth: 0,
-    logoHeight: 0,
+    logo: "/brand/ducane-logo.png",
+    logoWidth: 183,
+    logoHeight: 77,
   },
 ] as const;
 

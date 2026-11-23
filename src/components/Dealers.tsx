@@ -23,17 +23,17 @@ export function DealerBrands() {
           className="flex h-full flex-col rounded-3xl border border-white/10 bg-panel px-5 py-6 text-center shadow-xl shadow-black/10 sm:px-6 sm:py-8"
         >
           <div className="flex min-h-40 flex-1 items-center justify-center rounded-2xl bg-white px-5 py-6 sm:min-h-44">
-            {dealer.logo ? (
-              <img
-                src={dealer.logo}
-                alt={dealer.name}
-                width={dealer.logoWidth}
-                height={dealer.logoHeight}
-                className="h-auto max-h-24 w-auto max-w-full object-contain"
-              />
-            ) : (
-              <p className="font-display text-3xl font-semibold tracking-tight text-navy">{dealer.name}</p>
-            )}
+            <img
+              src={dealer.logo}
+              alt={dealer.name}
+              width={dealer.logoWidth}
+              height={dealer.logoHeight}
+              className={
+                dealer.name === "Ducane"
+                  ? "h-28 w-auto max-w-full object-contain"
+                  : "h-auto max-h-24 w-auto max-w-full object-contain"
+              }
+            />
           </div>
           <p className="mt-4 text-sm leading-relaxed text-muted">{dealer.text}</p>
         </li>
