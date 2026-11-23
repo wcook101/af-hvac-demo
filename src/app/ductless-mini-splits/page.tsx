@@ -30,6 +30,8 @@ export default function DuctlessMiniSplitsPage() {
         </p>
       </PageHeader>
 
+      <DealerSection />
+
       <section className="px-4 py-16 md:px-6 md:py-20">
         <div className="mx-auto grid max-w-6xl items-start gap-10 lg:grid-cols-[minmax(0,1fr)_20rem]">
           <div>
@@ -103,11 +105,6 @@ export default function DuctlessMiniSplitsPage() {
           may be available for qualifying major installation projects.
         </p>
       </PageSection>
-
-      <DealerSection
-        tone="deep"
-        intro="Carrier, Whirlpool, and Ducane are dealer lines A&F HVAC can include in a ductless installation when that equipment fits the project. The company also services all major brands."
-      />
 
       <PageSection title="Available across the three-county area">
         <p>

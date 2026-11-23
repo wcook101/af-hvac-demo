@@ -11,8 +11,8 @@ export default function Home() {
   return (
     <main id="main">
       <Hero />
-      <Services />
       <Dealers />
+      <Services />
       <FinancingPromo />
       <About />
       <WhyChoose />

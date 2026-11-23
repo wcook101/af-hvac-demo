@@ -124,7 +124,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <DealerSection intro="A&F HVAC is a dealer for Carrier, Whirlpool, and Ducane, in that order. This is not an exclusive arrangement or a special certification. The company also repairs and services all major brands." />
+      <DealerSection tone="deep" />
 
       <PageCta
         title="Call the Walnutport shop"

@@ -36,6 +36,8 @@ export default function SideDischargePage() {
         </p>
       </PageHeader>
 
+      <DealerSection />
+
       <section className="px-4 py-16 md:px-6 md:py-20">
         <div className="mx-auto grid max-w-6xl items-start gap-10 lg:grid-cols-[minmax(0,1fr)_20rem]">
           <div>
@@ -121,11 +123,6 @@ export default function SideDischargePage() {
           .
         </p>
       </PageSection>
-
-      <DealerSection
-        tone="deep"
-        intro="A&F HVAC is a dealer for Carrier, Whirlpool, and Ducane. Side-discharge equipment from those lines can be part of an installation when it fits the property. The company also services all major brands."
-      />
 
       <PageCta
         title="Request a side-discharge estimate"

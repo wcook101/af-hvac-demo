@@ -1,4 +1,18 @@
+import Link from "next/link";
 import { dealers } from "@/lib/site";
+
+function DealerCopy() {
+  return (
+    <>
+      A&amp;F HVAC offers heating and cooling equipment from Carrier, Whirlpool, and Ducane.{" "}
+      <Link href="/side-discharge-heating-and-cooling" className="text-copper hover:underline">
+        Side-discharge systems
+      </Link>{" "}
+      are available for installations where they are a good fit for the property. We also service all
+      major HVAC brands.
+    </>
+  );
+}
 
 export function DealerBrands() {
   return (
@@ -28,26 +42,22 @@ export function DealerBrands() {
   );
 }
 
-export function DealerSection({
-  tone = "deep",
-  intro = "A&F HVAC is a dealer for Carrier, Whirlpool, and Ducane. Those lines can be included when a property needs new heating or cooling equipment. The company also repairs and services all major brands.",
-}: {
-  tone?: "default" | "deep";
-  intro?: string;
-}) {
+export function DealerSection({ tone = "default" }: { tone?: "default" | "deep" }) {
   return (
     <section
       className={
         tone === "deep"
-          ? "scroll-mt-40 bg-navy-deep px-4 py-16 md:px-6 md:py-20"
-          : "scroll-mt-40 px-4 py-16 md:px-6 md:py-20"
+          ? "scroll-mt-40 bg-navy-deep px-4 py-12 md:px-6 md:py-16"
+          : "scroll-mt-40 px-4 py-12 md:px-6 md:py-16"
       }
     >
       <div className="mx-auto max-w-6xl">
-        <h2 className="max-w-3xl font-display text-3xl font-semibold tracking-tight text-cream">
-          Dealer for Carrier, Whirlpool, and Ducane
+        <h2 className="max-w-3xl font-display text-3xl font-semibold tracking-tight text-cream sm:text-4xl">
+          Dealer for Carrier, Whirlpool &amp; Ducane
         </h2>
-        <p className="mt-4 max-w-3xl text-lg leading-relaxed text-muted">{intro}</p>
+        <p className="mt-4 max-w-3xl text-lg leading-relaxed text-muted">
+          <DealerCopy />
+        </p>
         <div className="mt-8">
           <DealerBrands />
         </div>
@@ -58,19 +68,16 @@ export function DealerSection({
 
 export function Dealers() {
   return (
-    <section id="dealers" className="scroll-mt-40 bg-navy-deep px-4 py-20 md:px-6 md:py-28">
+    <section id="dealers" className="scroll-mt-40 border-b border-white/10 bg-navy-deep px-4 py-12 md:px-6 md:py-16">
       <div className="mx-auto max-w-6xl">
-        <div className="max-w-2xl">
-          <p className="text-sm font-semibold uppercase tracking-[0.22em] text-copper">Dealer lines</p>
-          <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight text-cream sm:text-4xl">
-            Carrier, Whirlpool, and Ducane
-          </h2>
-          <p className="mt-4 text-lg leading-relaxed text-muted">
-            A&amp;F HVAC is a dealer for Carrier, Whirlpool, and Ducane. Those lines are available for
-            installation projects. Repairs and service remain available for all major brands.
-          </p>
-        </div>
-        <div className="mt-10">
+        <p className="text-sm font-semibold uppercase tracking-[0.22em] text-copper">Equipment we offer</p>
+        <h2 className="mt-3 max-w-3xl font-display text-3xl font-semibold tracking-tight text-cream sm:text-4xl">
+          Dealer for Carrier, Whirlpool &amp; Ducane
+        </h2>
+        <p className="mt-4 max-w-3xl text-lg leading-relaxed text-muted">
+          <DealerCopy />
+        </p>
+        <div className="mt-8">
           <DealerBrands />
         </div>
       </div>

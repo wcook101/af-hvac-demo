@@ -32,6 +32,8 @@ export default function AirConditioningPage() {
         </p>
       </PageHeader>
 
+      <DealerSection />
+
       <section className="px-4 py-16 md:px-6 md:py-20">
         <div className="mx-auto grid max-w-6xl items-start gap-10 lg:grid-cols-[minmax(0,1fr)_20rem]">
           <div>
@@ -131,11 +133,6 @@ export default function AirConditioningPage() {
           may be available for qualifying major installation projects.
         </p>
       </PageSection>
-
-      <DealerSection
-        tone="default"
-        intro="For cooling installations, A&F HVAC is a dealer for Carrier, Whirlpool, and Ducane. That is a dealer relationship for those lines, not an exclusive arrangement or a special certification. Service remains available for all major brands."
-      />
 
       <PageCta
         title="Call about air conditioning"
