@@ -34,14 +34,23 @@ export const dealers = [
   {
     name: "Carrier",
     text: "Heating and cooling equipment",
+    logo: "/brand/carrier-logo.png",
+    logoWidth: 2000,
+    logoHeight: 622,
   },
   {
     name: "Whirlpool",
     text: "Heating and cooling equipment",
+    logo: "/brand/whirlpool-logo.png",
+    logoWidth: 1260,
+    logoHeight: 400,
   },
   {
     name: "Ducane",
     text: "Heating and cooling equipment",
+    logo: "",
+    logoWidth: 0,
+    logoHeight: 0,
   },
 ] as const;
 

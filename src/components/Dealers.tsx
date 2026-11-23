@@ -2,17 +2,26 @@ import { dealers } from "@/lib/site";
 
 export function DealerBrands() {
   return (
-    <ol className="grid gap-4 sm:grid-cols-3">
-      {dealers.map((dealer, index) => (
+    <ol className="grid grid-cols-1 items-stretch gap-4 md:grid-cols-3 md:gap-5">
+      {dealers.map((dealer) => (
         <li
           key={dealer.name}
-          className="rounded-3xl border border-white/10 bg-panel px-6 py-8 text-center shadow-xl shadow-black/10"
+          className="flex h-full flex-col rounded-3xl border border-white/10 bg-panel px-5 py-6 text-center shadow-xl shadow-black/10 sm:px-6 sm:py-8"
         >
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-copper">
-            {String(index + 1).padStart(2, "0")}
-          </p>
-          <p className="mt-3 font-display text-3xl font-semibold tracking-tight text-cream">{dealer.name}</p>
-          <p className="mt-2 text-sm leading-relaxed text-muted">{dealer.text}</p>
+          <div className="flex min-h-40 flex-1 items-center justify-center rounded-2xl bg-white px-5 py-6 sm:min-h-44">
+            {dealer.logo ? (
+              <img
+                src={dealer.logo}
+                alt={dealer.name}
+                width={dealer.logoWidth}
+                height={dealer.logoHeight}
+                className="h-auto max-h-24 w-auto max-w-full object-contain"
+              />
+            ) : (
+              <p className="font-display text-3xl font-semibold tracking-tight text-navy">{dealer.name}</p>
+            )}
+          </div>
+          <p className="mt-4 text-sm leading-relaxed text-muted">{dealer.text}</p>
         </li>
       ))}
     </ol>
