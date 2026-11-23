@@ -25,4 +25,6 @@ Dealer marks are unmodified official files: the Carrier horizontal lockup from t
 
 Carrier Infinity System assets are unmodified Carrier Ad Kit files: the Infinity System logo, the Infinity Greenspeed outdoor unit, the Infinity gas furnace, and the Infinity System Control. The Carrier Ad Kit permits dealers to use its photography and logos on their own websites.
 
+The Whirlpool heating and cooling lineup is the owner-approved equipment photograph, saved for the web as `public/images/whirlpool-heating-cooling.jpg`.
+
 Confirm with the owner before a public launch: service list, PA license 037268, hours, service area, and whether search engines should index the site.

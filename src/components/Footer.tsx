@@ -87,7 +87,7 @@ export function Footer() {
       <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-5 text-sm text-muted md:flex-row md:items-center md:justify-between md:px-6">
           <p>© 2026 A&amp;F HVAC. All rights reserved.</p>
-          <p>Carrier product photos are from the Carrier Ad Kit. Other equipment photographs are stock images.</p>
+          <p>Carrier product photos are from the Carrier Ad Kit. The Whirlpool lineup is an approved equipment photo. Other equipment photographs are stock images.</p>
           <Link href="/email" className="hover:text-copper">
             Employee Email
           </Link>

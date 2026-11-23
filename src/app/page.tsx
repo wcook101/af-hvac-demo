@@ -6,6 +6,7 @@ import { FinancingPromo } from "@/components/FinancingPromo";
 import { Hero } from "@/components/Hero";
 import { ServiceArea } from "@/components/ServiceArea";
 import { Services } from "@/components/Services";
+import { WhirlpoolShowcase } from "@/components/WhirlpoolShowcase";
 import { WhyChoose } from "@/components/WhyChoose";
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
     <main id="main">
       <Hero />
       <Dealers />
+      <WhirlpoolShowcase />
       <InfinityFeature />
       <Services />
       <FinancingPromo />
