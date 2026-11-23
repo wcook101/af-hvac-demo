@@ -26,9 +26,14 @@ export default function ContactPage() {
               {site.street} in {site.locality}, with more than 25 years in business.
             </p>
             <p>
-              Heating, air conditioning, and refrigeration include repairs, service, and installation for
-              all major brands, including ductless mini-split and side-discharge systems. Water heater
-              work is installation. Service is available in Lehigh, Northampton, and Carbon counties.{" "}
+              Heating, air conditioning, heat pumps, and refrigeration include repairs, service, and
+              installation for all major brands, including ductless mini-split and side-discharge systems.
+              A&amp;F HVAC can also discuss the{" "}
+              <Link href="/carrier-infinity-system" className="text-copper hover:underline">
+                Carrier Infinity System
+              </Link>
+              . Water heater work is installation. Service is available in Lehigh, Northampton, and Carbon
+              counties.{" "}
               <Link href="/financing" className="text-copper hover:underline">
                 Financing
               </Link>{" "}

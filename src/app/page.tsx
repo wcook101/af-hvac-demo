@@ -1,6 +1,7 @@
 import { About } from "@/components/About";
 import { Contact } from "@/components/Contact";
 import { Dealers } from "@/components/Dealers";
+import { InfinityFeature } from "@/components/InfinitySystem";
 import { FinancingPromo } from "@/components/FinancingPromo";
 import { Hero } from "@/components/Hero";
 import { ServiceArea } from "@/components/ServiceArea";
@@ -12,6 +13,7 @@ export default function Home() {
     <main id="main">
       <Hero />
       <Dealers />
+      <InfinityFeature />
       <Services />
       <FinancingPromo />
       <About />

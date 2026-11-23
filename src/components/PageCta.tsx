@@ -5,10 +5,12 @@ export function PageCta({
   title,
   text,
   estimateHref,
+  estimateLabel = "Request an Estimate",
 }: {
   title: string;
   text: string;
   estimateHref?: string;
+  estimateLabel?: string;
 }) {
   return (
     <section className="px-4 pb-20 md:px-6 md:pb-28">
@@ -20,7 +22,7 @@ export function PageCta({
         <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
           {estimateHref ? (
             <Link href={estimateHref} className="btn-copper h-12 px-6">
-              Request an Estimate
+              {estimateLabel}
             </Link>
           ) : null}
           <a href={site.phoneHref} className={estimateHref ? "btn-ghost h-12 px-6" : "btn-copper h-12 shrink-0 px-6"}>

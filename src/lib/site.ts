@@ -20,6 +20,12 @@ export const site = {
 
 export const siteUrl = "https://www.afhvacservice.com";
 
+export const carrierInfinityUrl = "https://www.carrier.com/us/en/residential/infinity-system/";
+
+export const infinityServiceName = "Carrier Infinity System";
+
+export const infinityConsultHref = "/contact?interest=carrier-infinity-system#estimate";
+
 export const addressLine = `${site.street}, ${site.city}, ${site.region}`;
 
 export const pageLinks = [
@@ -127,6 +133,15 @@ export const services = [
     image: "/images/service-side-discharge.jpg",
     alt: "Compact outdoor heating and cooling unit with a side-facing fan on an exterior wall.",
   },
+  {
+    number: "07",
+    title: "Heat Pumps",
+    navLabel: "Heat Pumps",
+    href: "/heat-pumps",
+    text: "Repairs, service, and installation for heat pumps that both heat and cool a property.",
+    image: "/images/carrier-infinity-outdoor.jpg",
+    alt: "Carrier Infinity outdoor unit, one type of heat pump and air conditioning equipment.",
+  },
 ] as const;
 
 export const reasons = [
@@ -156,6 +171,8 @@ export const sitemapPaths = [
   "/",
   "/heating",
   "/air-conditioning",
+  "/heat-pumps",
+  "/carrier-infinity-system",
   "/ductless-mini-splits",
   "/side-discharge-heating-and-cooling",
   "/refrigeration",

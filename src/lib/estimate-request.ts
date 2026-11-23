@@ -1,6 +1,10 @@
-import { services, site } from "@/lib/site";
+import { infinityServiceName, services, site } from "@/lib/site";
 
-const allowedServices = new Set<string>([...services.map((service) => service.title), "Not sure yet"]);
+const allowedServices = new Set<string>([
+  ...services.map((service) => service.title),
+  infinityServiceName,
+  "Not sure yet",
+]);
 
 export const estimateLimits = {
   name: 120,

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { DealerSection } from "@/components/Dealers";
+import { InfinityCallout } from "@/components/InfinitySystem";
 import { JsonLd } from "@/components/JsonLd";
 import { PageCta } from "@/components/PageCta";
 import { PageHeader } from "@/components/PageHeader";
@@ -31,6 +32,7 @@ export default function HeatingPage() {
       </PageHeader>
 
       <DealerSection />
+      <InfinityCallout />
 
       <section className="px-4 py-16 md:px-6 md:py-20">
         <div className="mx-auto grid max-w-6xl items-start gap-10 lg:grid-cols-[minmax(0,1fr)_20rem]">
@@ -113,6 +115,14 @@ export default function HeatingPage() {
           Heating is one part of the company&apos;s work, alongside{" "}
           <Link href="/air-conditioning" className="text-copper hover:underline">
             air conditioning
+          </Link>
+          ,{" "}
+          <Link href="/heat-pumps" className="text-copper hover:underline">
+            heat pumps
+          </Link>
+          , the{" "}
+          <Link href="/carrier-infinity-system" className="text-copper hover:underline">
+            Carrier Infinity System
           </Link>
           ,{" "}
           <Link href="/ductless-mini-splits" className="text-copper hover:underline">

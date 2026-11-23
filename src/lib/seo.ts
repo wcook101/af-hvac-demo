@@ -50,7 +50,7 @@ export const businessJsonLd = {
   "@id": businessId,
   name: site.name,
   description:
-    "Family-owned A&F HVAC in Walnutport, PA provides heating, air conditioning, ductless mini-splits, side-discharge heating and cooling, refrigeration, and water heater installation in Lehigh, Northampton, and Carbon counties. A&F HVAC is a dealer for Carrier, Whirlpool, and Ducane. Financing is available for qualifying major HVAC installation projects.",
+    "Family-owned A&F HVAC in Walnutport, PA provides heating, air conditioning, heat pumps, ductless mini-splits, side-discharge heating and cooling, refrigeration, and water heater installation in Lehigh, Northampton, and Carbon counties. A&F HVAC is a dealer for Carrier, Whirlpool, and Ducane and can discuss the Carrier Infinity System. Financing is available for qualifying major HVAC installation projects.",
   url: siteUrl,
   logo: `${siteUrl}/brand/af-hvac-logo.png`,
   image: `${siteUrl}/brand/af-hvac-logo.png`,
@@ -73,7 +73,7 @@ export const businessJsonLd = {
   areaServed: areasServed,
   hasOfferCatalog: {
     "@type": "OfferCatalog",
-    name: "Heating, air conditioning, ductless, side-discharge, refrigeration, water heater installation, and installation financing",
+    name: "Heating, air conditioning, heat pumps, Carrier Infinity System consultation, ductless, side-discharge, refrigeration, water heater installation, and installation financing",
     itemListElement: [
       ...services.map((service) => ({
         "@type": "Offer",
@@ -84,6 +84,16 @@ export const businessJsonLd = {
           url: `${siteUrl}${service.href}`,
         },
       })),
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Carrier Infinity System consultation",
+          description:
+            "A&F HVAC can discuss Carrier Infinity System heating and cooling equipment. Specifications, prices, and warranties are not published on this website.",
+          url: `${siteUrl}/carrier-infinity-system`,
+        },
+      },
       {
         "@type": "Offer",
         itemOffered: {

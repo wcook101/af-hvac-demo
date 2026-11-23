@@ -23,4 +23,6 @@ Equipment photographs are stock images from Pexels, used for this demo:
 
 Dealer marks are unmodified official files: the Carrier horizontal lockup from the Carrier Ad Kit, the U.S. Whirlpool brand logo from Whirlpool Corporation’s logo library, and the Ducane logo from ducanehvac.com. The owner confirmed A&F HVAC may use the Ducane mark.
 
+Carrier Infinity System assets are unmodified Carrier Ad Kit files: the Infinity System logo, the Infinity Greenspeed outdoor unit, the Infinity gas furnace, and the Infinity System Control. The Carrier Ad Kit permits dealers to use its photography and logos on their own websites.
+
 Confirm with the owner before a public launch: service list, PA license 037268, hours, service area, and whether search engines should index the site.

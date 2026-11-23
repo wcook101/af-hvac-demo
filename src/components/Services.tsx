@@ -12,9 +12,9 @@ export function Services() {
             Services
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-muted">
-            Repairs, service, maintenance, and installation for heating, air conditioning, and
-            refrigeration, including ductless mini-split and side-discharge systems, plus professional
-            water heater installation.
+            Repairs, service, maintenance, and installation for heating, air conditioning, heat
+            pumps, and refrigeration, including ductless mini-split and side-discharge systems, plus
+            professional water heater installation.
           </p>
         </div>
 

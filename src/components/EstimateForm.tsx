@@ -1,7 +1,7 @@
 "use client";
 
 import { validateEstimate } from "@/lib/estimate-request";
-import { services, site } from "@/lib/site";
+import { infinityServiceName, services, site } from "@/lib/site";
 import { useEffect, useRef, useState, type FormEvent } from "react";
 
 type Status = "idle" | "submitting" | "success" | "error";
@@ -24,6 +24,14 @@ export function EstimateForm() {
   useEffect(() => {
     if (status === "error" || status === "success") feedbackRef.current?.focus();
   }, [status]);
+
+  useEffect(() => {
+    const interest = new URLSearchParams(window.location.search).get("interest");
+    if (interest !== "carrier-infinity-system") return;
+    setFields((current) =>
+      current.service ? current : { ...current, service: infinityServiceName },
+    );
+  }, []);
 
   function update(name: keyof typeof empty, value: string) {
     setFields((current) => ({ ...current, [name]: value }));
@@ -149,6 +157,7 @@ export function EstimateForm() {
                 {service.title}
               </option>
             ))}
+            <option value={infinityServiceName}>{infinityServiceName}</option>
             <option value="Not sure yet">Not sure yet</option>
           </select>
         </label>
