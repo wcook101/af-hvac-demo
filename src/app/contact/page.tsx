@@ -27,8 +27,13 @@ export default function ContactPage() {
             </p>
             <p>
               Heating, air conditioning, and refrigeration include repairs, service, and installation for
-              all major brands. Water heater work is installation. Service is available in Lehigh,
-              Northampton, and Carbon counties.
+              all major brands, including ductless mini-split and side-discharge systems. Water heater
+              work is installation. Service is available in Lehigh, Northampton, and Carbon counties.{" "}
+              <Link href="/financing" className="text-copper hover:underline">
+                Financing
+              </Link>{" "}
+              is available for qualifying major HVAC installation projects. Ask about it in the estimate
+              form.
             </p>
           </div>
         </div>

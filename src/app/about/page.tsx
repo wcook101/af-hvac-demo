@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { DealerSection } from "@/components/Dealers";
 import { MailIcon, PhoneIcon, PinIcon, ShieldIcon } from "@/components/Icons";
 import { PageCta } from "@/components/PageCta";
 import { PageHeader } from "@/components/PageHeader";
@@ -7,7 +8,7 @@ import { addressLine, services, site } from "@/lib/site";
 import { pageMeta } from "@/lib/seo";
 
 const description =
-  "A&F HVAC is family-owned in Walnutport, PA, offering heating, air conditioning, refrigeration, and water heater installation for more than 25 years.";
+  "A&F HVAC is a family-owned dealer for Carrier, Whirlpool, and Ducane in Walnutport, PA, offering heating, air conditioning, refrigeration, and water heater installation for more than 25 years.";
 
 export const metadata = pageMeta(
   "About A&F HVAC | Family-Owned HVAC in Walnutport, PA",
@@ -58,12 +59,16 @@ export default function AboutPage() {
               available when a property needs a water heater put in.
             </p>
             <p>
-              Those services are offered throughout Lehigh, Northampton, and Carbon counties. The
-              details live on the{" "}
+              Those services are offered throughout Lehigh, Northampton, and Carbon counties, including
+              ductless mini-split and side-discharge installations. The details live on the{" "}
               <Link href="/service-area" className="text-copper hover:underline">
                 service area
               </Link>{" "}
-              page, and each service has its own page if you want to read further before you call.
+              page, and each service has its own page if you want to read further before you call.{" "}
+              <Link href="/financing" className="text-copper hover:underline">
+                Financing
+              </Link>{" "}
+              is available for qualifying major HVAC installation projects.
             </p>
             <ul className="grid gap-3 pt-2 sm:grid-cols-2">
               {services.map((service) => (
@@ -118,6 +123,8 @@ export default function AboutPage() {
           </aside>
         </div>
       </section>
+
+      <DealerSection intro="A&F HVAC is a dealer for Carrier, Whirlpool, and Ducane, in that order. This is not an exclusive arrangement or a special certification. The company also repairs and services all major brands." />
 
       <PageCta
         title="Call the Walnutport shop"

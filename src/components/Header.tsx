@@ -96,11 +96,11 @@ export function Header() {
             height={375}
             sizes="(min-width: 1024px) 375px, 260px"
             loading="eager"
-            className="h-auto w-auto max-h-none max-w-full object-contain object-left min-[400px]:max-w-[260px] lg:max-h-[125px] lg:max-w-[375px]"
+            className="h-auto w-auto max-h-none max-w-full object-contain object-left min-[400px]:max-w-[260px] lg:max-h-[96px] lg:max-w-[288px] xl:max-h-[112px] xl:max-w-[336px] 2xl:max-h-[125px] 2xl:max-w-[375px]"
           />
         </Link>
 
-        <nav aria-label="Primary" className="hidden min-w-0 items-center justify-end gap-4 lg:flex xl:gap-6">
+        <nav aria-label="Primary" className="hidden min-w-0 items-center justify-end gap-3 lg:flex xl:gap-4 2xl:gap-6">
           <Link
             href="/"
             aria-current={pathname === "/" ? "page" : undefined}
@@ -132,7 +132,7 @@ export function Header() {
               <div className="absolute left-0 top-full z-20 pt-3">
                 <ul
                   id="services-menu"
-                  className="w-56 rounded-2xl border border-white/10 bg-navy-deep p-2 shadow-2xl shadow-black/30"
+                  className="w-72 rounded-2xl border border-white/10 bg-navy-deep p-2 shadow-2xl shadow-black/30"
                 >
                   {services.map((service) => (
                     <li key={service.href}>

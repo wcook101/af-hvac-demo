@@ -1,5 +1,7 @@
 import { About } from "@/components/About";
 import { Contact } from "@/components/Contact";
+import { Dealers } from "@/components/Dealers";
+import { FinancingPromo } from "@/components/FinancingPromo";
 import { Hero } from "@/components/Hero";
 import { ServiceArea } from "@/components/ServiceArea";
 import { Services } from "@/components/Services";
@@ -10,6 +12,8 @@ export default function Home() {
     <main id="main">
       <Hero />
       <Services />
+      <Dealers />
+      <FinancingPromo />
       <About />
       <WhyChoose />
       <ServiceArea />

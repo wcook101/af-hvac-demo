@@ -50,7 +50,7 @@ export const businessJsonLd = {
   "@id": businessId,
   name: site.name,
   description:
-    "Family-owned A&F HVAC in Walnutport, PA provides heating, air conditioning, refrigeration, and water heater installation in Lehigh, Northampton, and Carbon counties.",
+    "Family-owned A&F HVAC in Walnutport, PA provides heating, air conditioning, ductless mini-splits, side-discharge heating and cooling, refrigeration, and water heater installation in Lehigh, Northampton, and Carbon counties. A&F HVAC is a dealer for Carrier, Whirlpool, and Ducane. Financing is available for qualifying major HVAC installation projects.",
   url: siteUrl,
   logo: `${siteUrl}/brand/af-hvac-logo.png`,
   image: `${siteUrl}/brand/af-hvac-logo.png`,
@@ -73,16 +73,28 @@ export const businessJsonLd = {
   areaServed: areasServed,
   hasOfferCatalog: {
     "@type": "OfferCatalog",
-    name: "Heating, air conditioning, refrigeration, and water heater installation",
-    itemListElement: services.map((service) => ({
-      "@type": "Offer",
-      itemOffered: {
-        "@type": "Service",
-        name: service.title,
-        description: service.text,
-        url: `${siteUrl}${service.href}`,
+    name: "Heating, air conditioning, ductless, side-discharge, refrigeration, water heater installation, and installation financing",
+    itemListElement: [
+      ...services.map((service) => ({
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: service.title,
+          description: service.text,
+          url: `${siteUrl}${service.href}`,
+        },
+      })),
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Financing for qualifying major HVAC installations",
+          description:
+            "Financing is available for qualifying major HVAC installation projects. Approval is not guaranteed. Rates, lenders, and terms are not published on this website.",
+          url: `${siteUrl}/financing`,
+        },
       },
-    })),
+    ],
   },
 };
 

@@ -77,7 +77,8 @@ export function EstimateForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="relative overflow-hidden rounded-3xl border border-white/10 bg-panel p-6 shadow-2xl shadow-black/20 sm:p-8"
+      id="estimate"
+      className="relative scroll-mt-40 overflow-hidden rounded-3xl border border-white/10 bg-panel p-6 shadow-2xl shadow-black/20 sm:p-8"
       aria-busy={status === "submitting"}
       aria-describedby={feedbackId ? `estimate-note ${feedbackId}` : "estimate-note"}
     >

@@ -25,8 +25,24 @@ export const addressLine = `${site.street}, ${site.city}, ${site.region}`;
 export const pageLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
+  { href: "/financing", label: "Financing" },
   { href: "/service-area", label: "Service Area" },
   { href: "/contact", label: "Contact" },
+] as const;
+
+export const dealers = [
+  {
+    name: "Carrier",
+    text: "Heating and cooling equipment",
+  },
+  {
+    name: "Whirlpool",
+    text: "Heating and cooling equipment",
+  },
+  {
+    name: "Ducane",
+    text: "Heating and cooling equipment",
+  },
 ] as const;
 
 export const serviceAreas = [
@@ -84,6 +100,24 @@ export const services = [
     image: "/images/service-install.jpg",
     alt: "Technician connecting service lines during an equipment installation.",
   },
+  {
+    number: "05",
+    title: "Ductless Mini-Split Systems",
+    navLabel: "Ductless Mini-Splits",
+    href: "/ductless-mini-splits",
+    text: "Ductless heating and cooling for individual rooms, additions, and spaces without traditional ductwork.",
+    image: "/images/service-mini-split.jpg",
+    alt: "Wall-mounted ductless mini-split indoor unit near a ceiling.",
+  },
+  {
+    number: "06",
+    title: "Side-Discharge Heating and Cooling",
+    navLabel: "Side-Discharge Systems",
+    href: "/side-discharge-heating-and-cooling",
+    text: "Compact outdoor heating and cooling equipment that sends air out the side of the cabinet.",
+    image: "/images/service-side-discharge.jpg",
+    alt: "Compact outdoor heating and cooling unit with a side-facing fan on an exterior wall.",
+  },
 ] as const;
 
 export const reasons = [
@@ -113,8 +147,11 @@ export const sitemapPaths = [
   "/",
   "/heating",
   "/air-conditioning",
+  "/ductless-mini-splits",
+  "/side-discharge-heating-and-cooling",
   "/refrigeration",
   "/water-heaters",
+  "/financing",
   "/about",
   "/service-area",
   "/contact",

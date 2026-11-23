@@ -18,5 +18,7 @@ Equipment photographs are stock images from Pexels, used for this demo:
 - Heating equipment: Pexels 34938439
 - Indoor unit service: Pexels 32588555
 - Gauge maintenance: Pexels 6471914
+- Ductless mini-split indoor unit: Pexels 38788452 (NEOSiAM, Pexels License)
+- Side-discharge outdoor unit: Pexels 39318564 (Nevtuğ Yalçın, Pexels License)
 
 Confirm with the owner before a public launch: service list, PA license 037268, hours, service area, and whether search engines should index the site.

@@ -117,9 +117,21 @@ export default function ServiceAreaPage() {
               <Link href="/refrigeration" className="text-copper hover:underline">
                 refrigeration
               </Link>
-              , and{" "}
+              ,{" "}
               <Link href="/water-heaters" className="text-copper hover:underline">
                 water heater installation
+              </Link>
+              ,{" "}
+              <Link href="/ductless-mini-splits" className="text-copper hover:underline">
+                ductless mini-splits
+              </Link>
+              ,{" "}
+              <Link href="/side-discharge-heating-and-cooling" className="text-copper hover:underline">
+                side-discharge systems
+              </Link>
+              , and{" "}
+              <Link href="/financing" className="text-copper hover:underline">
+                financing
               </Link>
               , or go straight to the{" "}
               <Link href="/contact" className="text-copper hover:underline">

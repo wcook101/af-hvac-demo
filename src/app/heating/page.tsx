@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { DealerSection } from "@/components/Dealers";
 import { JsonLd } from "@/components/JsonLd";
 import { PageCta } from "@/components/PageCta";
 import { PageHeader } from "@/components/PageHeader";
@@ -112,6 +113,14 @@ export default function HeatingPage() {
             air conditioning
           </Link>
           ,{" "}
+          <Link href="/ductless-mini-splits" className="text-copper hover:underline">
+            ductless mini-splits
+          </Link>
+          ,{" "}
+          <Link href="/side-discharge-heating-and-cooling" className="text-copper hover:underline">
+            side-discharge heating and cooling
+          </Link>
+          ,{" "}
           <Link href="/refrigeration" className="text-copper hover:underline">
             refrigeration
           </Link>
@@ -119,9 +128,18 @@ export default function HeatingPage() {
           <Link href="/water-heaters" className="text-copper hover:underline">
             water heater installation
           </Link>
-          .
+          .{" "}
+          <Link href="/financing" className="text-copper hover:underline">
+            Financing
+          </Link>{" "}
+          may be available for qualifying major installation projects.
         </p>
       </PageSection>
+
+      <DealerSection
+        tone="default"
+        intro="For heating installations, A&F HVAC is a dealer for Carrier, Whirlpool, and Ducane. Those names are dealer lines, not an exclusive arrangement or a special certification. Repairs and service are still available for all major brands."
+      />
 
       <PageCta
         title="Talk with A&F HVAC about heating"

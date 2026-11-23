@@ -22,6 +22,13 @@ export function About() {
               Repairs, service, and installation cover all major brands, including water heater
               installation, throughout Lehigh, Northampton, and Carbon counties.
             </p>
+            <p>
+              A&amp;F HVAC is a dealer for Carrier, Whirlpool, and Ducane.{" "}
+              <Link href="/financing" className="font-semibold text-copper hover:underline">
+                Financing
+              </Link>{" "}
+              is available for qualifying major HVAC installation projects.
+            </p>
           </div>
           <Link href="/about" className="mt-6 inline-flex text-sm font-semibold text-copper hover:underline">
             More about A&amp;F HVAC

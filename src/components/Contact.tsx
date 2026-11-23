@@ -14,8 +14,8 @@ export function Contact() {
           </h2>
           <p className="mt-4 max-w-md text-lg leading-relaxed text-muted">
             Call or email A&amp;F HVAC at {site.street} in {site.locality}. Heating, air conditioning,
-            refrigeration, and water heater installation are available throughout Lehigh, Northampton,
-            and Carbon counties.
+            refrigeration, ductless mini-splits, side-discharge systems, and water heater installation
+            are available throughout Lehigh, Northampton, and Carbon counties.
           </p>
           <ul className="mt-6 grid gap-2 text-sm font-semibold text-cream/90 sm:grid-cols-2">
             {services.map((service) => (
