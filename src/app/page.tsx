@@ -1,4 +1,5 @@
 import { About } from "@/components/About";
+import { CommercialFeature } from "@/components/CommercialFeature";
 import { Contact } from "@/components/Contact";
 import { Dealers } from "@/components/Dealers";
 import { InfinityFeature } from "@/components/InfinitySystem";
@@ -13,6 +14,7 @@ export default function Home() {
   return (
     <main id="main">
       <Hero />
+      <CommercialFeature />
       <Dealers />
       <WhirlpoolShowcase />
       <InfinityFeature />
