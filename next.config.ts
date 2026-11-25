@@ -35,6 +35,11 @@ const nextConfig: NextConfig = {
         destination: "/email",
         permanent: true,
       },
+      {
+        source: "/commercial-preview",
+        destination: "/",
+        permanent: true,
+      },
     ];
   },
   async headers() {
@@ -42,10 +47,6 @@ const nextConfig: NextConfig = {
       {
         source: "/:path*",
         headers: securityHeaders,
-      },
-      {
-        source: "/commercial-preview",
-        headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }],
       },
     ];
   },
