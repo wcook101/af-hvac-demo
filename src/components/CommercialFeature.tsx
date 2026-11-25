@@ -58,8 +58,8 @@ export function CommercialFeature() {
                 className="absolute inset-0 flex items-center justify-center bg-navy-deep/15"
                 aria-label="Play the A&F HVAC commercial"
               >
-                <span className="flex h-20 w-20 items-center justify-center rounded-full bg-copper text-navy shadow-xl shadow-black/40 transition hover:bg-[#f09a68]">
-                  <svg viewBox="0 0 24 24" aria-hidden="true" className="ml-1 h-9 w-9 fill-current">
+                <span className="flex h-14 w-14 items-center justify-center rounded-full bg-copper text-navy shadow-xl shadow-black/40 transition hover:bg-[#f09a68]">
+                  <svg viewBox="0 0 24 24" aria-hidden="true" className="ml-[0.175rem] h-[1.575rem] w-[1.575rem] fill-current">
                     <path d="M8 5.5v13l11-6.5-11-6.5z" />
                   </svg>
                 </span>
