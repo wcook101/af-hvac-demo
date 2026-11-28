@@ -56,7 +56,6 @@ export const businessJsonLd = {
   image: `${siteUrl}/brand/af-hvac-logo.png`,
   telephone: "+1-610-704-4419",
   email: site.email,
-  hasMap: site.mapsHref,
   address: postalAddress,
   identifier: {
     "@type": "PropertyValue",
