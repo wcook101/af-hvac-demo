@@ -3,9 +3,9 @@ import { PinIcon } from "@/components/Icons";
 import { serviceAreas } from "@/lib/site";
 
 const notes = [
-  "Heating, air conditioning, refrigeration, and water heater installation.",
-  "The same confirmed services from a company based in Walnutport.",
-  "Local coverage for heating, cooling, refrigeration, and water heater installation.",
+  "Heating and air-conditioning repair and installation, plus refrigeration and water heater installation.",
+  "The same heating, cooling, refrigeration, and water heater work from the Walnutport shop.",
+  "Heating, air conditioning, refrigeration, and water heater installation for properties in this county.",
 ];
 
 export function ServiceArea() {
@@ -17,7 +17,7 @@ export function ServiceArea() {
             Based in Walnutport, Pennsylvania
           </p>
           <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight text-cream sm:text-4xl">
-            Proudly Serving Eastern Pennsylvania
+            Serving Lehigh, Northampton, and Carbon Counties
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-muted">
             A&amp;F HVAC is based in Walnutport, Pennsylvania, and serves Lehigh, Northampton, and

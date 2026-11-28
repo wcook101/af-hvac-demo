@@ -21,7 +21,7 @@ export default function AirConditioningPage() {
         data={serviceJsonLd("Air conditioning repair, service, and installation", description, "/air-conditioning")}
       />
       <PageHeader
-        eyebrow="Cooling across eastern Pennsylvania"
+        eyebrow="Air conditioning in Walnutport, Pennsylvania"
         title="Air Conditioning Repair, Service & Installation"
         crumb="Air Conditioning"
         path="/air-conditioning"

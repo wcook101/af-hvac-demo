@@ -7,7 +7,7 @@ import { pageMeta, serviceJsonLd } from "@/lib/seo";
 
 const title = "Refrigeration Repair & Installation | A&F HVAC | Walnutport, PA";
 const description =
-  "A&F HVAC provides refrigeration repairs, service, and installation throughout Lehigh, Northampton, and Carbon counties, Pennsylvania.";
+  "A&F HVAC in Walnutport provides refrigeration repairs, service, and installation throughout Lehigh, Northampton, and Carbon counties, Pennsylvania.";
 
 export const metadata = pageMeta(title, description, "/refrigeration");
 

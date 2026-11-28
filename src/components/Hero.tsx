@@ -1,5 +1,6 @@
 import { site } from "@/lib/site";
 import Image from "next/image";
+import Link from "next/link";
 
 export function Hero() {
   return (
@@ -27,9 +28,20 @@ export function Hero() {
             </span>
           </h1>
           <p className="mt-5 max-w-xl text-lg leading-relaxed text-cream/90 sm:text-xl">
-            Family-owned in Walnutport, PA for over 25 years, A&amp;F HVAC provides heating, air
-            conditioning, and refrigeration repairs, service, and installation for all major brands
-            throughout Lehigh, Northampton, and Carbon counties.
+            Family-owned in Walnutport, PA for over 25 years, A&amp;F HVAC provides{" "}
+            <Link href="/heating" className="font-semibold text-copper underline decoration-copper/50 underline-offset-4 hover:text-cream">
+              heating
+            </Link>
+            ,{" "}
+            <Link href="/air-conditioning" className="font-semibold text-copper underline decoration-copper/50 underline-offset-4 hover:text-cream">
+              air conditioning
+            </Link>
+            , and{" "}
+            <Link href="/refrigeration" className="font-semibold text-copper underline decoration-copper/50 underline-offset-4 hover:text-cream">
+              refrigeration
+            </Link>{" "}
+            repairs, service, and installation for all major brands throughout Lehigh, Northampton,
+            and Carbon counties.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a href={site.phoneHref} className="btn-copper h-12 px-6">

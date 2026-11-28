@@ -9,7 +9,7 @@ const description =
   "A&F HVAC serves Lehigh, Northampton, and Carbon counties from Walnutport, PA, with heating, air conditioning, refrigeration, and water heater installation.";
 
 export const metadata = pageMeta(
-  "HVAC Service Areas | Lehigh, Northampton & Carbon Counties",
+  "HVAC Service Area | A&F HVAC | Walnutport, PA",
   description,
   "/service-area",
 );
@@ -25,8 +25,36 @@ export default function ServiceAreaPage() {
       >
         <p>
           A&amp;F HVAC is based at {site.street} in Walnutport and serves three Pennsylvania counties.
-          Heating, air conditioning, refrigeration, and water heater installation are available in each
-          one. The company is family-owned, fully insured, and has been in business for over 25 years.
+          In each county, the company provides{" "}
+          <Link href="/heating" className="text-copper hover:underline">
+            heating repair and installation
+          </Link>{" "}
+          and{" "}
+          <Link href="/air-conditioning" className="text-copper hover:underline">
+            air-conditioning repair and installation
+          </Link>
+          , along with{" "}
+          <Link href="/refrigeration" className="text-copper hover:underline">
+            refrigeration
+          </Link>{" "}
+          and{" "}
+          <Link href="/water-heaters" className="text-copper hover:underline">
+            water heater installation
+          </Link>
+          .{" "}
+          <Link href="/heat-pumps" className="text-copper hover:underline">
+            Heat pumps
+          </Link>
+          ,{" "}
+          <Link href="/ductless-mini-splits" className="text-copper hover:underline">
+            ductless mini-splits
+          </Link>
+          , and{" "}
+          <Link href="/side-discharge-heating-and-cooling" className="text-copper hover:underline">
+            side-discharge heating and cooling
+          </Link>{" "}
+          are available in the same area. The company is family-owned, fully insured, and has been in
+          business for over 25 years.
         </p>
       </PageHeader>
 
